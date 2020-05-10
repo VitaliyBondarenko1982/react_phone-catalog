@@ -1,0 +1,1 @@
+{"version":3,"sources":["NavBar.scss"],"names":[],"mappings":"AACE,WACE,eAAgB","file":"main.645b0a55.chunk.css","sourcesContent":[".nav {\n  &__list {\n    list-style: none;\n  }\n}\n"]}
