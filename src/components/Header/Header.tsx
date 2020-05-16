@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavBar } from '../NavBar';
+import './Header.scss';
 
 export const Header = () => {
   return (
@@ -11,10 +12,8 @@ export const Header = () => {
           className="header__logo"
           exact
         >
-          <p>
-            Phone
-            <span>catalog</span>
-          </p>
+          Phone
+          <span>catalog</span>
         </NavLink>
       </div>
       <NavBar />

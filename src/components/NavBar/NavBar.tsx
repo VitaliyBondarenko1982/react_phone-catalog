@@ -1,34 +1,28 @@
 import React from 'react';
 import './NavBar.scss';
 import { NavLink } from 'react-router-dom';
-import { Favorites } from '../Favorites';
-import { Cart } from '../Cart';
 
 export const NavBar = () => {
   return (
     <nav className="nav header__hav">
-      <ul className="nav__list">
-        <li className="nav__item">
-          <NavLink
-            to="/"
-            className="nav__link"
-            activeClassName="nav__link--active"
-            exact
-          >
-            Home
-          </NavLink>
-        </li>
-        <li className="nav__item">
-          <NavLink
-            to="/phones"
-            className="nav__link"
-            activeClassName="nav__link--active"
-            exact
-          >
-            Phones
-          </NavLink>
-        </li>
-      </ul>
+      <div className="nav__links">
+        <NavLink
+          to="/"
+          className="nav__link"
+          activeClassName="nav__link--active"
+          exact
+        >
+          <span>Home</span>
+        </NavLink>
+        <NavLink
+          to="/phones"
+          className="nav__link"
+          activeClassName="nav__link--active"
+          exact
+        >
+          <span>Phones</span>
+        </NavLink>
+      </div>
       <div className="actions nav__actions">
         <NavLink
           to="/favorites"
@@ -44,7 +38,7 @@ export const NavBar = () => {
           className="nav__action action__cart"
           activeClassName="action__cart--active"
         >
-          <svg className="actions__icon" width="16" height="16">
+          <svg className="action__icon" width="16" height="16">
             <use href="../../img/sprite.svg#cart-icon" />
           </svg>
         </NavLink>

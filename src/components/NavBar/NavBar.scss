@@ -1,5 +1,82 @@
+@import '../../utils/vars.scss';
+
 .nav {
-  &__list {
-    list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    margin-right: 64px;
+    display: flex;
+    align-items: center;
+
+
+  }
+
+  &__link {
+    display: flex;
+    margin-right: 64px;
+    align-items: center;
+    font-family: 'Mont-Bold', sans-serif;
+    color: $secondary-color;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 500ms ease-in-out;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover  {
+      color: $primary-color;
+    }
+
+    &--active {
+      border-bottom: 3px solid $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 25px;
+    box-shadow: -1px 0px 0px #e2e6e9;
+    border-bottom: 3px solid transparent;
+    transition: background-color 500ms ease-in-out;
+
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+
+    &:hover .action__icon {
+      fill: $primary-color;
+    }
+  }
+
+  &  .action__icon {
+    fill: $secondary-color;
+    transition: fill 500ms ease-in-out;
+  }
+
+  & .action__cart--active,
+  & .action__favorites--active {
+    fill: $primary-color;
+    border-bottom: 3px solid $primary-color;
   }
 }
