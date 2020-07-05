@@ -2,9 +2,9 @@
   "name": "react_phone-catalog",
   "homepage": ".",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "keywords": [],
-  "author": "Mate Academy",
+  "author": "Vitalii Bondarenko",
   "license": "GPL-3.0",
   "dependencies": {
     "@types/jest": "^24.9.0",
