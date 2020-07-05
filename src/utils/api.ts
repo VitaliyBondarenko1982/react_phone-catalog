@@ -1,10 +1,12 @@
 import { Phone, Details } from './interfaces';
 
 const HOST = 'https://alexandershpilka.github.io';
-const detailsURL = (id: string) => `${HOST}/phones_api/api/phones/${id}.json`;
 
-export const PHONES_URL = `${HOST}/phones_api/api/phones.json`;
 export const MAIN_URL = `${HOST}/phones_api/`;
+
+const detailsURL = (id: string) => `${MAIN_URL}api/phones/${id}.json`;
+
+export const PHONES_URL = `${MAIN_URL}api/phones.json`;
 
 export const getPhones = async <T>(url: string): Promise<T> => {
   const response = await fetch(url);
@@ -18,12 +20,12 @@ export const getPhones = async <T>(url: string): Promise<T> => {
 
 export const getDetails = async <T>(phones: Phone[]): Promise<Details[]> => {
   return Promise.all(
-    phones.map(({ phoneId }) => fetch(detailsURL(phoneId)).then(res => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
+    phones.map(({ phoneId }) => fetch(detailsURL(phoneId)).then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
 
-      return res.json();
+      return response.json();
     })),
   );
 };
