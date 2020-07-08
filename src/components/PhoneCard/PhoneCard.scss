@@ -1,0 +1,133 @@
+@import "../../utils/vars.scss";
+
+.card {
+  padding: 32px 32px 24px;
+  background-color: #fff;
+  border: 1px solid $elements-color;
+
+  &__image {
+    display: block;
+    width: 208px;
+    height: 208px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: (21 / 14);
+    color: $primary-color;
+    transition: color 0.3s ease;
+    margin-bottom: 8px;
+    height: 42px;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $elements-color;
+    margin-bottom: 16px;
+
+    &-discount {
+      font-family: "Mont-Bold", sans-serif;
+      margin-right: 8px;
+      color: $primary-color;
+      font-size: 22px;
+      line-height: (28 / 22);
+    }
+
+    &-regular {
+      color: $secondary-color;
+      text-decoration: line-through;
+      font-size: 22px;
+      line-height: (28 / 22);
+      font-weight: 500;
+    }
+  }
+
+  &__details {
+    &-list {
+      margin-bottom: 16px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-text {
+        font-family: "Mont-SemiBold", sans-serif;
+        font-size: 12px;
+        line-height: (15 / 12);
+        color: $secondary-color;
+      }
+
+      &-amount {
+        font-family: "Mont-SemiBold", sans-serif;
+        font-size: 12px;
+        line-height: (15 / 12);
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button-to-cart {
+    font-family: "Mont-SemiBold", sans-serif;
+    width: calc(100% - 48px);
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 14px;
+    line-height: (22 / 14);
+    transition: 0.3s ease;
+    padding: 9px;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+
+    &:hover,
+    &.added-to-cart {
+      color: $green-color;
+      background-color: #fff;
+      border-color: $elements-color;
+    }
+  }
+
+  &__button-to-favourite {
+    width: 40px;
+    min-width: 40px;
+    border: 1px solid $elements-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}

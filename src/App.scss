@@ -1,3 +1,5 @@
+@import "utils/vars";
+
 @font-face {
   font-family: "Mont-Regular";
   src: url("../src/fonts/Mont-Regular.woff") format("woff");
@@ -48,12 +50,73 @@ h3 {
 }
 
 .container {
-  margin-top: 64px;
+  margin: 64px auto 0;
   min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
 }
 
 .main-content {
-   padding: 0 25px;
+  padding: 0 25px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+  &__home {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__page {
+    position: relative;
+    padding-left: 24px;
+    font-size: 12px;
+    line-height: (15 /12);
+    color: $secondary-color;
+    font-family: "Mont-SemiBold", sans-serif;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &--current {
+      margin-right: 0;
+      cursor: auto;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.title {
+  font-family: "Mont-Bold", sans-serif;
+  font-size: 32px;
+  line-height: (41 / 32);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $primary-color;
+  margin-bottom: 8px;
 }

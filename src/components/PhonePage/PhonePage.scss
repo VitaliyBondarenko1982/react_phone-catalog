@@ -1,0 +1,14 @@
+@import "../../utils/vars";
+
+.phone {
+  &__container {
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+    padding: 25px 25px 40px;
+  }
+
+  &.title {
+    margin-bottom: 40px;
+  }
+}

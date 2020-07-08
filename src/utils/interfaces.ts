@@ -44,7 +44,7 @@ export interface PhonesWithDetails extends Phone {
 
 export interface State {
   phones: PhonesWithDetails[] | [];
-  // phoneDetails: Details | null;
+  phoneDetails: Details | null;
   phoneError: boolean;
   // phonesFavorite: string[];
   // phonesCart: Cart | {};

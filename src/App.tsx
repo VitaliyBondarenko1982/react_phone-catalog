@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './utils/vars.scss';
 import './App.scss';
+import Loader from 'react-loader-spinner';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Phones } from './components/Phones';
 import { Favorites } from './components/Favorites';
 import { Cart } from './components/Cart';
+
+const PhonePageLazy = lazy(() => import('./components/PhonePage')
+  .then(({ PhonePage }) => ({ default: PhonePage })));
 
 const App = () => (
   <div className="container">
@@ -33,6 +37,23 @@ const App = () => (
           component={Cart}
           exact
         />
+        <Suspense fallback={(
+          <Loader
+            type="TailSpin"
+            color="#000"
+            height={100}
+            width={100}
+          />
+        )}
+        >
+          <Switch>
+            <Route
+              path="/phones/:phoneId"
+              component={PhonePageLazy}
+              exact
+            />
+          </Switch>
+        </Suspense>
       </Switch>
     </main>
   </div>

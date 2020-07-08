@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import {LOAD_PHONES, SET_ERROR} from './actionTypes';
+import { LOAD_PHONE, LOAD_PHONES, SET_ERROR } from './actionTypes';
 import {
   getPhones,
   getDetails,
@@ -16,6 +16,11 @@ import {
 
 export const setPhones = (payload: PhonesWithDetails[]) => ({
   type: LOAD_PHONES,
+  payload,
+});
+
+export const setPhone = (payload: Details) => ({
+  type: LOAD_PHONE,
   payload,
 });
 
@@ -42,10 +47,36 @@ export const loadPhones = () => {
 
       dispatch(setError(false));
       dispatch(setPhones(phonesWithDetails));
-      console.log(phonesFromApi);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error.message);
     }
+  };
+};
+
+export const loadPhone = (id: string) => {
+  return async(dispatch: Dispatch, getState: () => State) => {
+    const { phones } = getState();
+    if (phones.length) {
+      const phoneDetails = phones.find(phone => id === phone.phoneId);
+      console.log('phoneDetails', phoneDetails);
+
+      if (phoneDetails) {
+        dispatch(setPhone(phoneDetails.details));
+      }
+    } else {
+      getPhone<Details>(id)
+        .then(data => {
+          dispatch(setPhone(data));
+          console.log('data', data);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error.message);
+          dispatch(setError(true));
+        });
+    }
+
+    dispatch(setError(false));
   };
 };
