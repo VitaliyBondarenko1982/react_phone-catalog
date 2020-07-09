@@ -7,6 +7,7 @@
   "author": "Vitalii Bondarenko",
   "license": "GPL-3.0",
   "dependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.8",
     "@types/react": "^16.9.18",
@@ -14,6 +15,7 @@
     "@types/react-loader-spinner": "^3.1.0",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.3",
+    "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
