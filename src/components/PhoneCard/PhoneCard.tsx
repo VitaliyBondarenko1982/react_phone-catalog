@@ -4,6 +4,7 @@ import { MAIN_URL } from '../../utils/api';
 import { PhonesWithDetails } from '../../utils/interfaces';
 
 import './PhoneCard.scss';
+import { ButtonAddToCart } from '../ButtonAddToCart';
 
 interface Props {
   phone: PhonesWithDetails;
@@ -59,12 +60,7 @@ export const PhoneCard: FC<Props> = ({ phone}) => (
       </li>
     </ul>
     <div className="card__buttons">
-      <button
-        type="button"
-        className="card__button-to-cart"
-      >
-        Add to cart
-      </button>
+      <ButtonAddToCart id={phone.phoneId} price={phone.priceDiscount} />
       <button
         type="button"
         className="card__button-to-favourite"

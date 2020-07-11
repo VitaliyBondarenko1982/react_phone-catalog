@@ -1,0 +1,31 @@
+@import "../../utils/vars";
+
+.cart {
+  &__container {
+    width: 100%;
+    max-width: 1190px;
+    margin: auto;
+    padding: 25px 25px 40px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    display: flex;
+
+    &-list {
+      width: 100%;
+      max-width: calc(100% - 384px);
+      margin-right: 16px;
+    }
+
+    &-buy {
+      width: 100%;
+      max-width: 368px;
+      border: 1px solid $elements-color;
+      height: 100px; //temp
+    }
+  }
+}

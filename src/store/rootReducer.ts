@@ -3,13 +3,16 @@ import { State } from '../utils/interfaces';
 import {
   LOAD_PHONES,
   SET_ERROR,
-  LOAD_PHONE,
+  LOAD_PHONE, SET_CART_ID, SET_TOTAL_AMOUNT, SET_TOTAL_PRICE,
 } from './actionTypes';
 
 const initialState = {
   phones: [],
   phoneError: false,
   phoneDetails: null,
+  cart: {},
+  totalPrice: 0,
+  totalAmount: 0,
 };
 
 interface CustomAction extends Action {
@@ -31,6 +34,24 @@ export const rootReducer: Reducer<State, CustomAction> = (
       return {
         ...state,
         phoneDetails: action.payload,
+      };
+    case SET_CART_ID:
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          [action.payload.id]: action.payload.amount,
+        },
+      };
+    case SET_TOTAL_AMOUNT:
+      return {
+        ...state,
+        totalAmount: state.totalAmount + action.payload,
+      };
+    case SET_TOTAL_PRICE:
+      return {
+        ...state,
+        totalPrice: state.totalPrice + action.payload,
       };
     case SET_ERROR:
       return {

@@ -1,0 +1,33 @@
+@import "../../utils/vars.scss";
+
+.button-to-cart {
+  font-family: "Mont-SemiBold", sans-serif;
+  width: calc(100% - 48px);
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 14px;
+  line-height: (22 / 14);
+  transition: 0.3s ease;
+  padding: 9px;
+  border: 1px solid $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.26);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.added-to-cart {
+    color: $green-color;
+    background-color: #fff;
+    border-color: $elements-color;
+    cursor: auto;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

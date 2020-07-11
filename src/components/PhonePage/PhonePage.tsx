@@ -7,6 +7,7 @@ import { Details, State } from '../../utils/interfaces';
 import { loadPhone as loadPhoneAction } from '../../store/actions';
 
 import './PhonePage.scss';
+import { ButtonAddToCart } from '../ButtonAddToCart';
 
 interface MatchParams {
   phoneId: string;
@@ -204,12 +205,10 @@ const PhonePageTemplate: FC<props> = ({
             </span>
           </div>
           <div className="phone__buttons">
-            <button
-              type="button"
-              className="phone__button-to-cart"
-            >
-              Add to cart
-            </button>
+            <ButtonAddToCart
+              id={phoneDetails.id}
+              price={phoneDetails.priceDiscount}
+            />
             <button
               type="button"
               className="phone__button-to-favourite"
@@ -269,6 +268,56 @@ const PhonePageTemplate: FC<props> = ({
         </div>
         <div className="phone__tech">
           <h3 className="phone__tech-title">Tech specs</h3>
+          <ul className="phone__tech-list">
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Screen</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.screen}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Resolution</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.resolution}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Processor</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.processor}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">RAM</span>
+              <span className="phone__tech-item-amount">
+                {`${parseInt(phoneDetails.ram, 10)} GB`}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Built in memory</span>
+              <span className="phone__tech-item-amount">
+                {`${parseInt(phoneDetails.capacity, 10)} GB`}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Camera</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.camera}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Zoom</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.zoom}
+              </span>
+            </li>
+            <li className="phone__tech-item">
+              <span className="phone__tech-item-title">Cell</span>
+              <span className="phone__tech-item-amount">
+                {phoneDetails.cell.join(', ')}
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

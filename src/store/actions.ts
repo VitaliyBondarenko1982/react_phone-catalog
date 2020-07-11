@@ -1,15 +1,24 @@
 import { Dispatch } from 'redux';
 
-import { LOAD_PHONE, LOAD_PHONES, SET_ERROR } from './actionTypes';
+import {
+  LOAD_PHONE,
+  LOAD_PHONES,
+  SET_CART_ID,
+  SET_ERROR,
+  SET_TOTAL_PRICE,
+  SET_TOTAL_AMOUNT,
+} from './actionTypes';
+
 import {
   getPhones,
   getDetails,
   getPhone,
   PHONES_URL,
 } from '../utils/api';
+
 import {
   Details,
-  Phone,
+  Phone, PhoneCartInfo,
   PhonesWithDetails,
   State,
 } from '../utils/interfaces';
@@ -21,6 +30,21 @@ export const setPhones = (payload: PhonesWithDetails[]) => ({
 
 export const setPhone = (payload: Details) => ({
   type: LOAD_PHONE,
+  payload,
+});
+
+export const setCartId = (payload: PhoneCartInfo) => ({
+  type: SET_CART_ID,
+  payload,
+});
+
+export const setTotalPrice = (payload: number) => ({
+  type: SET_TOTAL_PRICE,
+  payload,
+});
+
+export const setTotalAmount = (payload: number) => ({
+  type: SET_TOTAL_AMOUNT,
   payload,
 });
 

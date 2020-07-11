@@ -1,4 +1,4 @@
-@import '../../utils/vars.scss';
+@import "../../utils/vars";
 
 .nav {
   display: flex;
@@ -14,15 +14,13 @@
     margin-right: 64px;
     display: flex;
     align-items: center;
-
-
   }
 
   &__link {
     display: flex;
     margin-right: 64px;
     align-items: center;
-    font-family: 'Mont-Bold', sans-serif;
+    font-family: "Mont-Bold", sans-serif;
     color: $secondary-color;
     font-size: 12px;
     line-height: 12px;
@@ -56,7 +54,7 @@
     justify-content: center;
     height: 100%;
     padding: 0 25px;
-    box-shadow: -1px 0px 0px #e2e6e9;
+    box-shadow: -1px 0 0 #e2e6e9;
     border-bottom: 3px solid transparent;
     transition: background-color 500ms ease-in-out;
 
@@ -69,9 +67,35 @@
     }
   }
 
-  &  .action__icon {
+  & .action__icon {
     fill: $secondary-color;
     transition: fill 500ms ease-in-out;
+  }
+
+  & .action__cart {
+    position: relative;
+
+    &-amount {
+      position: absolute;
+      top: calc(50% - 7px);
+      right: calc(50% - 7px);
+      transform: translate(50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background-color: $red-color;
+      font-size: 9px;
+      line-height: (12 / 9);
+      color: #fff;
+
+      & span {
+        position: absolute;
+        left: 50%;
+        top: calc(50%);
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 
   & .action__cart--active,

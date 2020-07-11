@@ -7,7 +7,7 @@ import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Phones } from './components/Phones';
 import { Favorites } from './components/Favorites';
-import { Cart } from './components/Cart';
+import { CartPage } from './components/CartPage';
 
 const PhonePageLazy = lazy(() => import('./components/PhonePage')
   .then(({ PhonePage }) => ({ default: PhonePage })));
@@ -34,7 +34,7 @@ const App = () => (
         />
         <Route
           path="/Cart"
-          component={Cart}
+          component={CartPage}
           exact
         />
         <Suspense fallback={(

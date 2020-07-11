@@ -46,18 +46,18 @@ export interface State {
   phones: PhonesWithDetails[] | [];
   phoneDetails: Details | null;
   phoneError: boolean;
-  // phonesFavorite: string[];
-  // phonesCart: Cart | {};
+  // favourites: string[];
+  cart: Cart | {};
   // sortBy: string;
-  // totalPrice: number;
-  // totalQuantity: number;
+  totalPrice: number;
+  totalAmount: number;
 }
 
-// export interface Cart {
-//   [key: string]: number;
-// }
+export interface Cart {
+  [key: string]: number;
+}
 
 export interface PhoneCartInfo {
   id: string;
-  quantity: number;
+  amount: number;
 }

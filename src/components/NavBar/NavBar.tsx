@@ -1,8 +1,17 @@
-import React from 'react';
-import './NavBar.scss';
+import React, {FC} from 'react';
+import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { State } from '../../utils/interfaces';
+import './NavBar.scss';
 
-export const NavBar = () => {
+interface StateProps {
+  totalAmount: number;
+}
+
+const NavBarTemplate: FC<StateProps> = ({
+  totalAmount,
+}) => {
   return (
     <nav className="nav header__hav">
       <div className="nav__links">
@@ -41,8 +50,22 @@ export const NavBar = () => {
           <svg className="action__icon" width="16" height="16">
             <use href="../../img/sprite.svg#cart-icon" />
           </svg>
+          <div className={cx('action__cart-amount', {
+            hidden: !totalAmount,
+          })}
+          >
+            <span>{totalAmount}</span>
+          </div>
         </NavLink>
       </div>
     </nav>
   );
 };
+
+const mapStateToProps = (state: State) => ({
+  totalAmount: state.totalAmount,
+});
+
+export const NavBar = connect<StateProps, null, {}, State>(
+  mapStateToProps,
+)(NavBarTemplate);
