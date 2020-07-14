@@ -3,7 +3,7 @@ import { State } from '../utils/interfaces';
 import {
   LOAD_PHONES,
   SET_ERROR,
-  LOAD_PHONE, SET_CART_ID, SET_TOTAL_AMOUNT, SET_TOTAL_PRICE,
+  LOAD_PHONE, SET_CART_ID, SET_TOTAL_AMOUNT, SET_TOTAL_PRICE, DELETE_CART_PRODUCT,
 } from './actionTypes';
 
 const initialState = {
@@ -52,6 +52,11 @@ export const rootReducer: Reducer<State, CustomAction> = (
       return {
         ...state,
         totalPrice: state.totalPrice + action.payload,
+      };
+    case DELETE_CART_PRODUCT:
+      return {
+        ...state,
+        cart: { ...action.payload },
       };
     case SET_ERROR:
       return {

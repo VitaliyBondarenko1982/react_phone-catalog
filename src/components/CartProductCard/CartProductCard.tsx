@@ -7,6 +7,7 @@ import {
   setCartId as setCartIdAction,
   setTotalPrice as setTotalPriceAction,
   setTotalAmount as setTotalAmountAction,
+  deleteCartProduct as deleteCartProductAction, deleteCartProduct,
 } from '../../store/actions';
 
 import './CartProductCard.scss';
@@ -18,6 +19,7 @@ interface Props {
 }
 
 interface DispatchProps {
+  deleteCartProduct: (value: Cart) => void;
   setCartId: (value: PhoneCartInfo) => void;
   setTotalPrice: (value: number) => void;
   setTotalAmount: (value: number) => void;
@@ -30,6 +32,7 @@ const CartProductCardTemplate: FC<Props & DispatchProps> = ({
   setTotalAmount,
   setTotalPrice,
   setCartId,
+  deleteCartProduct,
 }) => {
   const [
     currentProductAmount, setCurrentProductAmount,
@@ -56,11 +59,28 @@ const CartProductCardTemplate: FC<Props & DispatchProps> = ({
     });
   }, [product, currentProductAmount, setTotalPrice, setTotalAmount, setCartId]);
 
+  const deleteCartProductHandler = useCallback(() => {
+    const copyCart = { ...cart };
+
+    delete copyCart[product.phoneId];
+    deleteCartProduct(copyCart);
+    setTotalPrice(-(currentProductAmount * product.priceDiscount));
+    setTotalAmount(-currentProductAmount);
+  }, [
+    cart,
+    currentProductAmount,
+    product,
+    deleteCartProduct,
+    setTotalAmount,
+    setTotalPrice,
+  ]);
+
   return (
     <li className="cart__content-item cart__item">
       <button
         type="button"
         className="cart__item-delete"
+        onClick={deleteCartProductHandler}
       >
         <svg className="action__icon" width="16" height="16">
           <use href="../../img/sprite.svg#cross-icon" />
@@ -105,6 +125,7 @@ const CartProductCardTemplate: FC<Props & DispatchProps> = ({
 };
 
 const mapDispatchToProps = {
+  deleteCartProduct: deleteCartProductAction,
   setTotalAmount: setTotalAmountAction,
   setTotalPrice: setTotalPriceAction,
   setCartId: setCartIdAction,

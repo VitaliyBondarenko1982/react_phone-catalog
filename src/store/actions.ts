@@ -7,6 +7,7 @@ import {
   SET_ERROR,
   SET_TOTAL_PRICE,
   SET_TOTAL_AMOUNT,
+  DELETE_CART_PRODUCT,
 } from './actionTypes';
 
 import {
@@ -21,6 +22,7 @@ import {
   Phone, PhoneCartInfo,
   PhonesWithDetails,
   State,
+  Cart,
 } from '../utils/interfaces';
 
 export const setPhones = (payload: PhonesWithDetails[]) => ({
@@ -45,6 +47,11 @@ export const setTotalPrice = (payload: number) => ({
 
 export const setTotalAmount = (payload: number) => ({
   type: SET_TOTAL_AMOUNT,
+  payload,
+});
+
+export const deleteCartProduct = (payload: Cart) => ({
+  type: DELETE_CART_PRODUCT,
   payload,
 });
 
