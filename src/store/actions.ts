@@ -8,6 +8,8 @@ import {
   SET_TOTAL_PRICE,
   SET_TOTAL_AMOUNT,
   DELETE_CART_PRODUCT,
+  SET_FAVOURITE_PRODUCT,
+  DELETE_FAVOURITE_PRODUCT,
 } from './actionTypes';
 
 import {
@@ -37,6 +39,16 @@ export const setPhone = (payload: Details) => ({
 
 export const setCartId = (payload: PhoneCartInfo) => ({
   type: SET_CART_ID,
+  payload,
+});
+
+export const setFavouriteProduct = (payload: string) => ({
+  type: SET_FAVOURITE_PRODUCT,
+  payload,
+});
+
+export const deleteFavouriteProduct = (payload: string) => ({
+  type: DELETE_FAVOURITE_PRODUCT,
   payload,
 });
 

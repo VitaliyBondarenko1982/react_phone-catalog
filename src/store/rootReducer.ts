@@ -3,7 +3,14 @@ import { State } from '../utils/interfaces';
 import {
   LOAD_PHONES,
   SET_ERROR,
-  LOAD_PHONE, SET_CART_ID, SET_TOTAL_AMOUNT, SET_TOTAL_PRICE, DELETE_CART_PRODUCT,
+  LOAD_PHONE,
+  SET_CART_ID,
+  SET_TOTAL_AMOUNT,
+  SET_TOTAL_PRICE,
+  DELETE_CART_PRODUCT,
+  SET_FAVOURITE_PRODUCT,
+  DELETE_FAVOURITE_PRODUCT,
+
 } from './actionTypes';
 
 const initialState = {
@@ -13,6 +20,7 @@ const initialState = {
   cart: {},
   totalPrice: 0,
   totalAmount: 0,
+  favouritesProducts: [],
 };
 
 interface CustomAction extends Action {
@@ -42,6 +50,17 @@ export const rootReducer: Reducer<State, CustomAction> = (
           ...state.cart,
           [action.payload.id]: action.payload.amount,
         },
+      };
+    case SET_FAVOURITE_PRODUCT:
+      return {
+        ...state,
+        favouritesProducts: [...state.favouritesProducts, action.payload],
+      };
+    case DELETE_FAVOURITE_PRODUCT:
+      return {
+        ...state,
+        favouritesProducts: [...state.favouritesProducts]
+          .filter(id => id !== action.payload),
       };
     case SET_TOTAL_AMOUNT:
       return {

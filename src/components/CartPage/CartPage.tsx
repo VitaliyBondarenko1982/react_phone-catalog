@@ -73,7 +73,7 @@ const CartPageTemplate: FC<StateProps & DispatchProps> = ({
           <div
             className="cart__content-is-checkout"
           >
-            Thank you for you buying!
+            Thank you for your buying!
           </div>
         )
       }
@@ -96,7 +96,7 @@ const CartPageTemplate: FC<StateProps & DispatchProps> = ({
                 {totalPrice}
               </div>
               <div className="cart__content-buy-text">
-                {`Total for ${totalPrice} items`}
+                {`Total for ${totalAmount} items`}
               </div>
               <button
                 type="button"
@@ -107,7 +107,9 @@ const CartPageTemplate: FC<StateProps & DispatchProps> = ({
               </button>
             </div>
           </div>
-        ) : (<div className="cart__content-empty">Cart is empty</div>)
+        ) : (
+          !checkout && <div className="cart__content-empty">Cart is empty</div>
+        )
       }
     </div>
   );

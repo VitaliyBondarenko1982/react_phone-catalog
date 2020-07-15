@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback } from 'react';
+import React, { FC, useState, useCallback, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import { Cart, PhoneCartInfo, PhonesWithDetails } from '../../utils/interfaces';
@@ -7,7 +7,7 @@ import {
   setCartId as setCartIdAction,
   setTotalPrice as setTotalPriceAction,
   setTotalAmount as setTotalAmountAction,
-  deleteCartProduct as deleteCartProductAction, deleteCartProduct,
+  deleteCartProduct as deleteCartProductAction,
 } from '../../store/actions';
 
 import './CartProductCard.scss';
@@ -75,6 +75,27 @@ const CartProductCardTemplate: FC<Props & DispatchProps> = ({
     setTotalPrice,
   ]);
 
+  const inputAmountHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    let inputValue = Number(event.target.value);
+    const maxValue = 19;
+
+    if (Number.isNaN(inputValue)) {
+      return;
+    }
+
+    if (Number.isNaN(inputValue)) {
+      return;
+    }
+
+    if (inputValue > maxValue) {
+      inputValue = maxValue;
+    }
+
+    setCurrentProductAmount(inputValue);
+    setTotalPrice((-currentProductAmount + inputValue) * product.priceDiscount);
+    setTotalAmount(-currentProductAmount + inputValue);
+  };
+
   return (
     <li className="cart__content-item cart__item">
       <button
@@ -105,9 +126,11 @@ const CartProductCardTemplate: FC<Props & DispatchProps> = ({
         />
         <label htmlFor="product-amount" className="cart__item-amount-label">
           <input
+            type="text"
             id="product-amount"
             className="cart__item-amount-input"
-            value={productAmount}
+            value={currentProductAmount}
+            onChange={inputAmountHandler}
           />
         </label>
         <button

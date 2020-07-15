@@ -46,7 +46,7 @@ export interface State {
   phones: PhonesWithDetails[] | [];
   phoneDetails: Details | null;
   phoneError: boolean;
-  // favourites: string[];
+  favouritesProducts: string[];
   cart: Cart | {};
   // sortBy: string;
   totalPrice: number;

@@ -1,0 +1,27 @@
+@import "../../utils/vars.scss";
+
+.button-to-favourite {
+  width: 40px;
+  min-width: 40px;
+  border: 1px solid $elements-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  & svg {
+    fill: #333;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
