@@ -7,10 +7,12 @@ import './NavBar.scss';
 
 interface StateProps {
   totalAmount: number;
+  favouritesProducts: string[];
 }
 
 const NavBarTemplate: FC<StateProps> = ({
   totalAmount,
+  favouritesProducts,
 }) => {
   return (
     <nav className="nav header__hav">
@@ -34,13 +36,19 @@ const NavBarTemplate: FC<StateProps> = ({
       </div>
       <div className="actions nav__actions">
         <NavLink
-          to="/favorites"
+          to="/favourites"
           className="nav__action action__favorites"
           activeClassName="action__favorites--active"
         >
           <svg className="action__icon" width="16" height="16">
             <use href="../../img/sprite.svg#heart-icon" />
           </svg>
+          <div className={cx('action__cart-amount', {
+            hidden: !favouritesProducts.length,
+          })}
+          >
+            <span>{favouritesProducts.length}</span>
+          </div>
         </NavLink>
         <NavLink
           to="/cart"
@@ -64,6 +72,7 @@ const NavBarTemplate: FC<StateProps> = ({
 
 const mapStateToProps = (state: State) => ({
   totalAmount: state.totalAmount,
+  favouritesProducts: state.favouritesProducts,
 });
 
 export const NavBar = connect<StateProps, null, {}, State>(

@@ -49,6 +49,7 @@
   }
 
   &__action {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,8 +74,6 @@
   }
 
   & .action__cart {
-    position: relative;
-
     &-amount {
       position: absolute;
       top: calc(50% - 7px);

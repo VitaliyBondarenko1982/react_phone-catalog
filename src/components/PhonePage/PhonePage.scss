@@ -3,7 +3,7 @@
 .phone {
   &__container {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1190px;
     margin: auto;
     padding: 25px 25px 40px;
   }
@@ -211,22 +211,10 @@
       width: calc(100% - 56px);
       padding: 13px;
     }
-  }
 
-  &__button-to-favourite {
-    width: 48px;
-    min-width: 48px;
-    border: 1px solid $elements-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 48px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: 0.3s ease;
-
-    &:hover {
-      border-color: $primary-color;
+    & .button-to-favourite {
+      width: 48px;
+      height: 48px;
     }
   }
 

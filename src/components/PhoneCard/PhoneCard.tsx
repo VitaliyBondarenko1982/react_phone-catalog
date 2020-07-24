@@ -5,13 +5,15 @@ import { PhonesWithDetails } from '../../utils/interfaces';
 
 import './PhoneCard.scss';
 import { ButtonAddToCart } from '../ButtonAddToCart';
-import {ButtonAddToFavourite} from "../ButtonAddToFavourite";
+import { ButtonAddToFavourite } from '../ButtonAddToFavourite';
 
 interface Props {
   phone: PhonesWithDetails;
 }
 
-export const PhoneCard: FC<Props> = ({ phone}) => (
+export const PhoneCard: FC<Props> = ({
+  phone,
+}) => (
   <div className="card">
     <NavLink
       to={`/phones/${phone.phoneId}`}
@@ -62,7 +64,7 @@ export const PhoneCard: FC<Props> = ({ phone}) => (
     </ul>
     <div className="card__buttons">
       <ButtonAddToCart id={phone.phoneId} price={phone.priceDiscount} />
-      <ButtonAddToFavourite id={phone.phoneId}/>
+      <ButtonAddToFavourite id={phone.phoneId} />
     </div>
   </div>
 );

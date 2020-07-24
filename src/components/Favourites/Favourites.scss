@@ -1,0 +1,21 @@
+@import "../../utils/vars";
+
+.favourites {
+  &__container {
+    width: 100%;
+    max-width: 1190px;
+    margin: auto;
+    padding: 25px 25px 40px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__amount {
+    color: $secondary-color;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 40px;
+  }
+}

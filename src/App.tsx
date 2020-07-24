@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Phones } from './components/Phones';
-import { Favorites } from './components/Favorites';
+import { Favourites } from './components/Favourites';
 import { CartPage } from './components/CartPage';
 
 const PhonePageLazy = lazy(() => import('./components/PhonePage')
@@ -28,8 +28,8 @@ const App = () => (
           exact
         />
         <Route
-          path="/favorites"
-          component={Favorites}
+          path="/favourites"
+          component={Favourites}
           exact
         />
         <Route
