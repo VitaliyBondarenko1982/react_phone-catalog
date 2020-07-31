@@ -26,7 +26,7 @@ const NavBarTemplate: FC<StateProps> = ({
           <span>Home</span>
         </NavLink>
         <NavLink
-          to="/phones"
+          to="/phones/"
           className="nav__link"
           activeClassName="nav__link--active"
           exact
@@ -36,7 +36,7 @@ const NavBarTemplate: FC<StateProps> = ({
       </div>
       <div className="actions nav__actions">
         <NavLink
-          to="/favourites"
+          to="/favourites/"
           className="nav__action action__favorites"
           activeClassName="action__favorites--active"
         >
