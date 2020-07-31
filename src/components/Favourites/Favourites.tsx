@@ -27,7 +27,7 @@ const FavouritesTemplate: FC<StateProps> = ({
           exact
         >
           <svg className="breadcrumbs__icon" width="16" height="16">
-            <use href="../../img/sprite.svg#home-icon" />
+            <use href="img/sprite.svg#home-icon" />
           </svg>
         </NavLink>
         <span
@@ -35,7 +35,7 @@ const FavouritesTemplate: FC<StateProps> = ({
         >
           Favourites
           <svg className="breadcrumbs__arrow" width="16" height="16">
-            <use href="../../img/sprite.svg#chevron-icon" />
+            <use href="img/sprite.svg#chevron-icon" />
           </svg>
         </span>
       </div>

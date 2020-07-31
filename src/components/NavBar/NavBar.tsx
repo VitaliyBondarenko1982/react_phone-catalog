@@ -56,7 +56,7 @@ const NavBarTemplate: FC<StateProps> = ({
           activeClassName="action__cart--active"
         >
           <svg className="action__icon" width="16" height="16">
-            <use href="../../img/sprite.svg#cart-icon" />
+            <use href="img/sprite.svg#cart-icon" />
           </svg>
           <div className={cx('action__cart-amount', {
             hidden: !totalAmount,

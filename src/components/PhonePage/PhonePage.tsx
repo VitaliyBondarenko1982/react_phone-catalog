@@ -8,7 +8,7 @@ import { loadPhone as loadPhoneAction } from '../../store/actions';
 
 import './PhonePage.scss';
 import { ButtonAddToCart } from '../ButtonAddToCart';
-import {ButtonAddToFavourite} from "../ButtonAddToFavourite";
+import { ButtonAddToFavourite } from '../ButtonAddToFavourite';
 
 interface MatchParams {
   phoneId: string;
@@ -102,7 +102,7 @@ const PhonePageTemplate: FC<props> = ({
           exact
         >
           <svg className="breadcrumbs__icon" width="16" height="16">
-            <use href="../../img/sprite.svg#home-icon" />
+            <use href="img/sprite.svg#home-icon" />
           </svg>
         </NavLink>
         <NavLink
@@ -111,7 +111,7 @@ const PhonePageTemplate: FC<props> = ({
           <span className="breadcrumbs__page">
             Phones
             <svg className="breadcrumbs__arrow" width="16" height="16">
-              <use href="../../img/sprite.svg#chevron-icon" />
+              <use href="img/sprite.svg#chevron-icon" />
             </svg>
           </span>
         </NavLink>
@@ -121,7 +121,7 @@ const PhonePageTemplate: FC<props> = ({
         >
           {phoneDetails.name}
           <svg className="breadcrumbs__arrow" width="16" height="16">
-            <use href="../../img/sprite.svg#chevron-icon" />
+            <use href="img/sprite.svg#chevron-icon" />
           </svg>
         </span>
       </div>
