@@ -4,7 +4,7 @@ import './utils/vars.scss';
 import './App.scss';
 import Loader from 'react-loader-spinner';
 import { Header } from './components/Header';
-import { Home } from './components/Home';
+import { HomePage } from './components/HomePage';
 import { Phones } from './components/Phones';
 import { Favourites } from './components/Favourites';
 import { CartPage } from './components/CartPage';
@@ -19,7 +19,7 @@ const App = () => (
       <Switch>
         <Route
           path="/"
-          component={Home}
+          component={HomePage}
           exact
         />
         <Route

@@ -132,8 +132,19 @@ button {
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
 
 .hidden {
   display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.opacity {
+  opacity: 1;
 }

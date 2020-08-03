@@ -4,7 +4,7 @@ import React, {
   lazy,
   Suspense,
   useState,
-  useMemo,
+  useMemo, useCallback,
 } from 'react';
 
 import cx from 'classnames';
@@ -37,6 +37,7 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [isSelect, setIsSelect] = useState(false);
   const [sortBy, setSortBy] = useState(sortDropdown[0]);
+  const [isOpacity, setIsOpacity] = useState(false);
 
   useEffect(() => {
     loadPhones();
@@ -44,8 +45,17 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
 
   const selectClickHandler = () => {
     const select = !isSelect;
+    const opacity = !isOpacity;
 
-    setIsSelect(select);
+    setIsOpacity(opacity);
+
+    if (!select) {
+      setTimeout(() => {
+        setIsSelect(select);
+      }, 300);
+    } else {
+      setIsSelect(select);
+    }
   };
 
   const onEnterSelect = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -79,21 +89,42 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
     setSearchQuery(value);
   };
 
+  const sortedPhones = useMemo(() => {
+    switch (sortBy) {
+      case 'Newest':
+        return [...phones].sort((a, b) => b.year - a.year);
+      case 'Oldest':
+        return [...phones].sort((a, b) => a.year - b.year);
+      case 'Price (from low to high)':
+        return [...phones].sort((a, b) => a.priceDiscount - b.priceDiscount);
+      case 'Price (from high to low)':
+        return [...phones].sort((a, b) => b.priceDiscount - a.priceDiscount);
+      case 'RAM':
+        return [...phones]
+          .sort((a, b) => parseInt(b.ram, 10) - parseInt(a.ram, 10));
+      case 'Capacity':
+        return [...phones]
+          .sort((a, b) => parseInt(b.capacity, 10) - parseInt(a.capacity, 10));
+      default:
+        return phones;
+    }
+  }, [sortBy, phones]);
+
   const filteredPhones = useMemo(() => {
     const searchValue = searchQuery.toLowerCase();
 
-    return phones.filter(phone => {
+    return sortedPhones.filter(phone => {
       return phone.name.toLowerCase().includes(searchValue);
     });
-  }, [phones, searchQuery]);
+  }, [sortedPhones, searchQuery]);
 
   const totalPhones = useMemo(() => {
     if (filteredPhones.length || searchQuery) {
       return filteredPhones;
     }
 
-    return phones;
-  }, [phones, filteredPhones]);
+    return sortedPhones;
+  }, [sortedPhones, filteredPhones]);
 
   return (
     <div className="phones__container">
@@ -140,7 +171,8 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
               className={cx(
                 'select__options',
                 {
-                  hidden: !isSelect,
+                  visible: isSelect,
+                  opacity: isOpacity,
                 },
               )}
             >
@@ -196,7 +228,10 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
         </div>
       </Suspense>
       <div
-        className={cx('overflow', { hidden: !isSelect })}
+        className={cx('overflow', {
+          visible: isSelect,
+          opacity: isOpacity,
+        })}
         onClick={selectClickHandler}
         onKeyDown={(e) => escapePressHandler(e)}
         role="menu"

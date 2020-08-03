@@ -91,6 +91,17 @@
         padding: 8px 0;
         cursor: auto;
         z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+
+        &.visible {
+          visibility: visible;
+        }
+
+        &.opacity {
+          opacity: 1;
+        }
       }
 
       &__option {

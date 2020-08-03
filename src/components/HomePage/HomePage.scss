@@ -1,0 +1,76 @@
+@import "../../utils/vars";
+
+.home {
+  &__container {
+    width: 100%;
+    max-width: 1190px;
+    margin: auto;
+    padding: 40px 0;
+  }
+
+  .slider {
+    padding: 0 25px;
+  }
+
+  &__section {
+    padding: 0 19px;
+    margin-bottom: 80px;
+
+    &-title {
+      margin-bottom: 24px;
+      padding-left: 6px;
+    }
+
+    & .slick-slide .card {
+      margin: 0 6px;
+    }
+
+    .slick-arrow {
+      transform: none;
+      top: -60px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid $icons-color;
+      transition: 0.3s ease;
+      background-color: #fff;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 7px !important;
+        height: 7px !important;
+        font-size: unset !important;
+        line-height: unset !important;
+        top: 50%;
+        left: 50%;
+        border-left: 2px solid $primary-color;
+        border-top: 2px solid $primary-color;
+        border-radius: 1px;
+        opacity: 1;
+      }
+
+      &.slick-prev {
+        left: unset;
+        right: 54px;
+        z-index: 1;
+
+        &:before {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+
+      &.slick-next {
+        right: 6px;
+
+        &:before {
+          transform: translate(-50%, -50%) rotate(135deg);
+        }
+      }
+    }
+  }
+
+}

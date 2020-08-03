@@ -1,6 +1,8 @@
 @import "../../utils/vars.scss";
 
 .slider {
+  margin-bottom: 100px;
+
   &__item {
     margin: auto;
     width: calc(100% - 96px) !important;
