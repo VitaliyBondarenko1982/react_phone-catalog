@@ -8,6 +8,12 @@
     padding: 25px 25px 40px;
   }
 
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__amount {
     color: $secondary-color;
     font-size: 14px;
@@ -26,6 +32,8 @@
     margin-right: 16px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 220px;
 
     &:last-child {
       margin-right: 0;
@@ -63,6 +71,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
 
       &__text {
         margin-right: 10px;
@@ -70,14 +79,31 @@
 
       &.is-active {
         border-color: $primary-color;
-
-        & .select__options {
-          display: block;
-        }
       }
 
       &__options {
-        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 4px);
+        border: 1px solid $elements-color;
+        background-color: #fff;
+        padding: 8px 0;
+        cursor: auto;
+        z-index: 3;
+      }
+
+      &__option {
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: (22 / 14);
+        color: $secondary-color;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
 
@@ -87,6 +113,8 @@
 
     & .search {
       padding-right: 38px;
+      display: block;
+      width: 100%;
 
       &__icon {
         position: absolute;
@@ -95,6 +123,7 @@
         transform: translateY(-50%);
 
       }
+
     }
   }
 

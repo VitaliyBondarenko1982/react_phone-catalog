@@ -1,4 +1,14 @@
-import React, { FC, useEffect, lazy, Suspense } from 'react';
+import React, {
+  FC,
+  useEffect,
+  lazy,
+  Suspense,
+  useState,
+  useMemo,
+} from 'react';
+
+import cx from 'classnames';
+import { v4 as uuidv4 } from 'uuid';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -7,6 +17,7 @@ import {
   loadPhones as loadPhonesAction,
 } from '../../store/actions';
 import './Phones.scss';
+import { sortDropdown } from '../../utils/constatnts';
 
 interface StateProps {
   phones: PhonesWithDetails[];
@@ -23,9 +34,66 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
   phones,
   loadPhones,
 }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSelect, setIsSelect] = useState(false);
+  const [sortBy, setSortBy] = useState(sortDropdown[0]);
+
   useEffect(() => {
     loadPhones();
   }, [loadPhones]);
+
+  const selectClickHandler = () => {
+    const select = !isSelect;
+
+    setIsSelect(select);
+  };
+
+  const onEnterSelect = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const { key } = event;
+    const select = !isSelect;
+
+    if (key === 'Enter') {
+      setIsSelect(select);
+    }
+  };
+
+  const onEnterSetSortBy = (
+    event: React.KeyboardEvent<HTMLDivElement>,
+    value: string,
+  ) => {
+    // eslint-disable-next-line no-console
+    console.log(event, value);
+  };
+
+  const escapePressHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const { key } = event;
+
+    if (key === 'Escape') {
+      setIsSelect(false);
+    }
+  };
+
+  const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+
+    setSearchQuery(value);
+  };
+
+  const filteredPhones = useMemo(() => {
+    const searchValue = searchQuery.toLowerCase();
+
+    return phones.filter(phone => {
+      return phone.name.toLowerCase().includes(searchValue);
+    });
+  }, [phones, searchQuery]);
+
+  const totalPhones = useMemo(() => {
+    if (filteredPhones.length || searchQuery) {
+      return filteredPhones;
+    }
+
+    return phones;
+  }, [phones, filteredPhones]);
 
   return (
     <div className="phones__container">
@@ -50,24 +118,45 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
       </div>
       <h2 className="phones__title title">Mobile phones</h2>
       <p className="phones__amount">
-        {phones.length}
+        {totalPhones.length}
         {' '}
         models
       </p>
       <div className="phones__actions">
         <div className="phones__action">
           <p className="phones__action-title">Sort by</p>
-          <div className="phones__action-field select">
-            <span className="select__text">Price (from low to high)</span>
+          <div
+            className="phones__action-field select"
+            onClick={selectClickHandler}
+            role="menu"
+            tabIndex={0}
+            onKeyDown={(e) => onEnterSelect(e)}
+          >
+            <span className="select__text">{sortBy}</span>
             <svg className="select__arrow" width="16" height="16">
               <use href="../../img/sprite.svg#chevron-icon" />
             </svg>
-            <ul className="select__options">
-              <li className="select__option">Price (from low to high)</li>
-              <li className="select__option">Price (from high to low)</li>
-              <li className="select__option">RAM</li>
-              <li className="select__option">Capacity</li>
-            </ul>
+            <div
+              className={cx(
+                'select__options',
+                {
+                  hidden: !isSelect,
+                },
+              )}
+            >
+              {sortDropdown.map(option => (
+                <div
+                  key={uuidv4()}
+                  role="menuitem"
+                  tabIndex={0}
+                  className="select__option"
+                  onClick={() => setSortBy(option)}
+                  onKeyPress={(event) => onEnterSetSortBy(event, option)}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="phones__action">
@@ -76,7 +165,13 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
             htmlFor="search"
             className="phones__action-label"
           >
-            <input id="search" className="phones__action-field search" />
+            <input
+              id="search"
+              className="phones__action-field search"
+              placeholder="iPhone 7"
+              value={searchQuery}
+              onChange={searchHandler}
+            />
             <svg className="search__icon" width="16" height="16">
               <use href="../../img/sprite.svg#search-icon" />
             </svg>
@@ -95,11 +190,18 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
       )}
       >
         <div className="phones__catalog">
-          {phones.map(phone => (
+          {totalPhones.map(phone => (
             <LazyPhoneCard key={phone.id} phone={phone} />
           ))}
         </div>
       </Suspense>
+      <div
+        className={cx('overflow', { hidden: !isSelect })}
+        onClick={selectClickHandler}
+        onKeyDown={(e) => escapePressHandler(e)}
+        role="menu"
+        tabIndex={0}
+      />
     </div>
   );
 };
