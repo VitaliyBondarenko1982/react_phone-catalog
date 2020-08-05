@@ -1,4 +1,10 @@
 # React Phone catalog
-- Replace `<your_account>` with your Github username in the [DEMO LINK](https://vitaliybondarenko1982.github.io/react_phone-catalog/)
 
-- Start project - yarn start or npm start
+[DEMO LINK](https://phone-catalog-app.herokuapp.com/#/)
+
+1. git clone https://github.com/VitaliyBondarenko1982/react_phone-catalog.git
+2. npm i
+3. npm start
+4. open in http://localhost:3000/
+
+
