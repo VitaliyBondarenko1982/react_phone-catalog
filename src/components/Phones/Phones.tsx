@@ -4,7 +4,7 @@ import React, {
   lazy,
   Suspense,
   useState,
-  useMemo, useCallback,
+  useMemo,
 } from 'react';
 
 import cx from 'classnames';
@@ -27,7 +27,7 @@ interface DispatchProps {
   loadPhones: () => void;
 }
 
-const LazyPhoneCard = lazy(() => import('../PhoneCard/PhoneCard')
+const LazyPhoneCard = lazy(() => import('../PhoneCard')
   .then(({ PhoneCard }) => ({ default: PhoneCard })));
 
 const PhonesTemplate: FC<StateProps & DispatchProps> = ({

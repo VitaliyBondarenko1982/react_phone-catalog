@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
 import { PhoneCard } from '../PhoneCard';
 import './HomePage.scss';
-import {settings} from "cluster";
 
 interface StateProps {
   phones: PhonesWithDetails[];
