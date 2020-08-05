@@ -21,6 +21,10 @@
     margin-right: 58px;
     transition: opacity 500ms ease-in-out;
 
+    @media (max-width: 500px) {
+      margin-right: 24px;
+    }
+
     &:hover {
       opacity: 0.8;
     }

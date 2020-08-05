@@ -10,6 +10,10 @@
 
   .slider {
     padding: 0 25px;
+
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
   }
 
   &__section {
@@ -33,6 +37,10 @@
       border: 1px solid $icons-color;
       transition: 0.3s ease;
       background-color: #fff;
+
+      @media (max-width: 500px) {
+        display: none !important;
+      }
 
       &:hover {
         border-color: $primary-color;
