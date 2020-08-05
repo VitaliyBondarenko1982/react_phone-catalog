@@ -8,6 +8,7 @@ import { HomePage } from './components/HomePage';
 import { Phones } from './components/Phones';
 import { Favourites } from './components/Favourites';
 import { CartPage } from './components/CartPage';
+import { Footer } from './components/Footer';
 
 const PhonePageLazy = lazy(() => import('./components/PhonePage')
   .then(({ PhonePage }) => ({ default: PhonePage })));
@@ -56,6 +57,7 @@ const App = () => (
         </Suspense>
       </Switch>
     </main>
+    <Footer />
   </div>
 );
 
