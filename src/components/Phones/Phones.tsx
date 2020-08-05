@@ -124,7 +124,7 @@ const PhonesTemplate: FC<StateProps & DispatchProps> = ({
     }
 
     return sortedPhones;
-  }, [sortedPhones, filteredPhones]);
+  }, [sortedPhones, filteredPhones, searchQuery]);
 
   return (
     <div className="phones__container">
