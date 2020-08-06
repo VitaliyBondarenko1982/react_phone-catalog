@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
