@@ -1,0 +1,7 @@
+.logo {
+  & .__app-icon {
+    width: 40px;
+    height: 24px;
+    fill: var(--c-primary);
+  }
+}

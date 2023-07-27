@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import { NAV_MAIN_LINKS, NAV_SIDE_LINKS } from '../../constants';
-import Icon from '../Icon';
+import { Icon } from '../ui';
 
 import './navbar.scss';
 

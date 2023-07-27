@@ -4,13 +4,7 @@
   align-items: center;
   box-shadow: 0 1px 0 0 var(--c-elements);
 
-  &__logo {
+  & .__app-logo {
     margin-right: 64px;
-  }
-
-  &__icon {
-    width: 40px;
-    height: 24px;
-    fill: var(--c-primary);
   }
 }

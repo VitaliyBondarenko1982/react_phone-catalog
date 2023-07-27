@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  background-color: unset;
+  border: unset;
+  transition: border-color 0.3s ease;
+}
+
+.is-disabled {
+  cursor: auto;
+}
+
+.square {
+  padding: 8px;
+  border: 1px solid var(--c-icons-secondary);
+
+  &:hover {
+    border-color: var(--c-primary);
+  }
+
+  &.is-disabled {
+    border-color: var(--c-elements);
+  }
+
+  & .__app-icon {
+    fill: var(--c-icons-secondary);
+  }
+}

@@ -1,0 +1,41 @@
+.footer {
+  box-shadow: 0 -1px 0 0 var(--c-elements);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1136px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 64px;
+  }
+
+  &__link {
+    display: flex;
+    padding: 40px 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--c-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__on-top {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin-right: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--c-secondary);
+    }
+  }
+}

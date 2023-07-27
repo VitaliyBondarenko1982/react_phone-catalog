@@ -5,14 +5,12 @@ import './icon.scss';
 
 interface Props {
   iconId: string;
-  className?: string;
 }
 const Icon: FC<Props> = ({
   iconId,
-  className,
 }) => {
   return (
-    <svg className={cn('icon', className)}>
+    <svg className={cn('icon', '__app-icon')}>
       <use href={`img/sprite.svg#${iconId}`} />
     </svg>
   );

@@ -11,6 +11,7 @@ export enum Icons {
   LOGO = 'logo-icon',
   HEART = 'heart-icon',
   CART = 'cart-icon',
+  ARROW_TOP = 'arrow-top-icon',
 }
 
 export const NAV_MAIN_LINKS = [
