@@ -5,7 +5,7 @@ import './icon.scss';
 
 interface Props {
   iconId: string;
-  className: string;
+  className?: string;
 }
 const Icon: FC<Props> = ({
   iconId,
