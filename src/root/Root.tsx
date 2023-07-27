@@ -10,20 +10,21 @@ import {
   PhonesDetails,
   Tablets,
 } from '../pages';
+import { AppRoutes } from '../constants';
 
 const Root = () => {
   return (
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="/" element={<Home />} />
-        <Route path="phones">
+      <Route path={AppRoutes.HOME} element={<App />}>
+        <Route path={AppRoutes.HOME} element={<Home />} />
+        <Route path={AppRoutes.PHONES}>
           <Route index element={<Phones />} />
           <Route path=":slug" element={<PhonesDetails />} />
         </Route>
-        <Route path="tablets" element={<Tablets />} />
-        <Route path="accessories" element={<Accessories />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="favorites" element={<Favorites />} />
+        <Route path={AppRoutes.TABLETS} element={<Tablets />} />
+        <Route path={AppRoutes.ACCESSORIES} element={<Accessories />} />
+        <Route path={AppRoutes.CART} element={<Cart />} />
+        <Route path={AppRoutes.FAVORITES} element={<Favorites />} />
         <Route />
         <Route
           path="*"
