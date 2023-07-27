@@ -10,8 +10,17 @@ export enum AppRoutes {
 export enum Icons {
   LOGO = 'logo-icon',
   HEART = 'heart-icon',
+  HEART_FILL = 'heart-fill-icon',
   CART = 'cart-icon',
+  ARROW_LEFT = 'arrow-left-icon',
+  ARROW_RIGHT = 'arrow-right-icon',
+  ARROW_BOTTOM = 'arrow-bottom-icon',
   ARROW_TOP = 'arrow-top-icon',
+  HOME = 'home-icon',
+  SEARCH = 'search-icon',
+  MINUS = 'minus-icon',
+  PLUS = 'plus-icon',
+  CLOSE = 'close-icon',
 }
 
 export const NAV_MAIN_LINKS = [
