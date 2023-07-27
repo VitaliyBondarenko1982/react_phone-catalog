@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import App from '../App';
+import App from '../app';
 import {
   Accessories,
   Cart,
