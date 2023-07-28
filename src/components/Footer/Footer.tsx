@@ -35,7 +35,7 @@ const Footer = () => {
         </ul>
         <div className="footer__on-top">
           <p className="footer__on-top-text">Back to top</p>
-          <Button onClick={scrollToTop} type="square">
+          <Button onClick={scrollToTop} type="secondary">
             <Icon iconId={Icons.ARROW_TOP} />
           </Button>
         </div>

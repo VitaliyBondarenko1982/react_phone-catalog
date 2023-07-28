@@ -52,3 +52,19 @@ export const NAV_SIDE_LINKS = [
     icon: Icons.CART,
   },
 ];
+
+export const MAIN_SLIDER_SETTINGS = {
+  dots: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
+export const MAIN_SLIDER_IMAGES = [
+  'img/banner-1.png',
+  'img/banner-2.png',
+  'img/banner-3.png',
+  'img/banner-4.png',
+  'img/banner-5.png',
+];

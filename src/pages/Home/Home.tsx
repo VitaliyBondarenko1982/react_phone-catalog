@@ -1,7 +1,11 @@
+import { MainSlider } from '../../components';
+
+import './home.scss';
+
 const Home = () => {
   return (
-    <div>
-      Home Page
+    <div className="home">
+      <MainSlider />
     </div>
   );
 };
