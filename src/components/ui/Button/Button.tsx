@@ -1,11 +1,11 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
 import cn from 'classnames';
 
 import './button.scss';
 
 interface Props {
   onClick: VoidFunction;
-  children: ReactElement;
+  children: ReactNode;
   type?: 'primary' | 'secondary' | 'rounded';
   isDisabled?: boolean;
   className?: string;
@@ -22,7 +22,7 @@ const Button: FC<Props> = ({
       type="button"
       disabled={isDisabled}
       onClick={onClick}
-      className={cn('button __app-button', className, type, {
+      className={cn('button', className, type, {
         'is-disabled': isDisabled,
       })}
     >

@@ -7,7 +7,7 @@ import {
   Home,
   NotFound,
   Phones,
-  PhonesDetails,
+  PhoneDetails,
   Tablets,
 } from '../pages';
 import { AppRoutes } from '../constants';
@@ -19,7 +19,7 @@ const Root = () => {
         <Route path={AppRoutes.HOME} element={<Home />} />
         <Route path={AppRoutes.PHONES}>
           <Route index element={<Phones />} />
-          <Route path=":slug" element={<PhonesDetails />} />
+          <Route path=":slug" element={<PhoneDetails />} />
         </Route>
         <Route path={AppRoutes.TABLETS} element={<Tablets />} />
         <Route path={AppRoutes.ACCESSORIES} element={<Accessories />} />

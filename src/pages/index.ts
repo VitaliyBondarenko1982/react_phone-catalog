@@ -4,5 +4,5 @@ export { default as Favorites } from './Favorites';
 export { default as Home } from './Home';
 export { default as NotFound } from './NotFound';
 export { default as Phones } from './Phones';
-export { default as PhonesDetails } from './PhonesDetails';
+export { default as PhoneDetails } from './PhoneDetails';
 export { default as Tablets } from './Tablets';

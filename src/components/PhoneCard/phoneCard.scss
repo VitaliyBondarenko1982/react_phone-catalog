@@ -1,0 +1,78 @@
+.phone-card {
+  width: 272px;
+  padding: 37px 24px 24px;
+  border: 1px solid var(--c-elements);
+  color: var(--c-primary);
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  &__image {
+    width: 128px;
+    height: 172px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    color: var(--c-primary);
+    height: 40px;
+  }
+
+  &__price {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &__current-price {
+    line-height: 50px;
+    margin-right: 8px;
+  }
+
+  &__full-price {
+    line-height: 50px;
+    text-decoration: line-through;
+    color: var(--c-secondary);
+  }
+
+  &__details-list {
+    padding-top: 16px;
+    border-top: 1px solid var(--c-elements);
+    margin-bottom: 16px;
+  }
+
+  &__details-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__details-title {
+    line-height: 15px;
+    color: var(--c-secondary);
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__add-to-card {
+    flex-grow: 1;
+    margin-right: 8px;
+  }
+
+  &__add-to-favorite {
+    padding: 11px;
+  }
+}

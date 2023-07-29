@@ -39,6 +39,10 @@
     transition: 0.3s;
     background-color: #fff;
 
+    &:before {
+      content: unset;
+    }
+
     @media (max-width: 768px) {
       display: none !important;
     }

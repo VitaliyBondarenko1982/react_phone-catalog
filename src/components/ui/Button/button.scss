@@ -1,5 +1,6 @@
 .button {
   display: flex;
+  justify-content: center;
   background-color: unset;
   border: unset;
   transition: border-color 0.3s ease;
@@ -7,6 +8,20 @@
 
 .is-disabled {
   cursor: auto;
+}
+
+.primary {
+  padding: 8px 4px;
+  border: 1px solid var(--c-primary);
+  background-color: var(--c-primary);
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--c-white);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
+  }
 }
 
 .secondary {
@@ -22,6 +37,6 @@
   }
 
   & .__app-icon {
-    fill: var(--c-icons-secondary);
+    fill: var(--c-icons-primary);
   }
 }
