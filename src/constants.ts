@@ -1,10 +1,10 @@
 export enum AppRoutes {
   HOME = '/',
-  PHONES = 'phones',
-  TABLETS = 'tablets',
-  ACCESSORIES = 'accessories',
-  CART = 'cart',
-  FAVORITES = 'favorites',
+  PHONES = '/phones',
+  TABLETS = '/tablets',
+  ACCESSORIES = '/accessories',
+  CART = '/cart',
+  FAVORITES = '/favorites',
 }
 
 export enum Icons {
@@ -79,6 +79,8 @@ export const BY_CATEGORY_ITEMS = [
     category: 'Accessories',
   },
 ];
+
+export const EXCLUDE_BREADCRUMBS_ROUTES = [AppRoutes.CART, AppRoutes.HOME];
 
 export const MAIN_SLIDER_SETTINGS = {
   dots: true,

@@ -37,8 +37,8 @@ const PhoneCard: FC<Props> = ({ phone }) => {
         {name}
       </Link>
       <div className="phone-card__price">
-        <span className="phone-card__current-price">{price}</span>
-        <span className="phone-card__full-price">{fullPrice}</span>
+        <span className="phone-card__current-price">{`$${price}`}</span>
+        <span className="phone-card__full-price">{`$${fullPrice}`}</span>
       </div>
       <ul className="phone-card__details-list">
         <li className="phone-card__details-item">

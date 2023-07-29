@@ -1,0 +1,23 @@
+.breadcrumbs {
+  width: 1136px;
+  margin: 0 auto;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    text-transform: capitalize;
+    color: var(--c-primary);
+    font-size: 12px;
+    font-weight: 600;
+    fill: var(--c-icons-secondary);
+
+    &:last-child {
+      color: var(--c-secondary);
+      margin-right: 0;
+    }
+  }
+}
