@@ -30,7 +30,7 @@ export const NAV_MAIN_LINKS = [
   },
   {
     to: AppRoutes.PHONES,
-    title: 'People',
+    title: 'Phones',
   },
   {
     to: AppRoutes.TABLETS,
