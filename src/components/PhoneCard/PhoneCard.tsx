@@ -33,8 +33,8 @@ const PhoneCard: FC<Props> = ({ phone }) => {
       >
         <img className="phone-card__image" src={image} alt={name} />
       </Link>
-      <Link to={phoneDetailsPath}>
-        <h3 className="phone-card__name">{name}</h3>
+      <Link to={phoneDetailsPath} className="phone-card__name">
+        {name}
       </Link>
       <div className="phone-card__price">
         <span className="phone-card__current-price">{price}</span>

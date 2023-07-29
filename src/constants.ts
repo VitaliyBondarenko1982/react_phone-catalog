@@ -53,6 +53,33 @@ export const NAV_SIDE_LINKS = [
   },
 ];
 
+export enum ProductCategories {
+  PHONES = 'phones',
+  TABLETS = 'tablets',
+  ACCESSORIES = 'accessories',
+}
+
+export const BY_CATEGORY_ITEMS = [
+  {
+    id: ProductCategories.PHONES,
+    to: AppRoutes.PHONES,
+    image: 'img/category-phones.png',
+    category: 'Mobile phones',
+  },
+  {
+    id: ProductCategories.TABLETS,
+    to: AppRoutes.TABLETS,
+    image: 'img/category-tablets.png',
+    category: 'Tablets',
+  },
+  {
+    id: ProductCategories.ACCESSORIES,
+    to: AppRoutes.ACCESSORIES,
+    image: 'img/category-accessories.png',
+    category: 'Accessories',
+  },
+];
+
 export const MAIN_SLIDER_SETTINGS = {
   dots: true,
   infinite: true,

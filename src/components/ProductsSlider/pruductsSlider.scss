@@ -1,13 +1,6 @@
 .products-slider {
-  margin-bottom: 80px;
-
   &__title {
     margin-bottom: 24px;
-    font-size: 32px;
-    line-height: 40px;
-    color: var(--c-primary);
-    font-weight: 700;
-    letter-spacing: -0.32px;
   }
 
   & .slick-slide .phone-card {

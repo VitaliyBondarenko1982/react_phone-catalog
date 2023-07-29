@@ -1,0 +1,43 @@
+.shop-by-category {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__image-link {
+    display: flex;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__category {
+    display: flex;
+    color: var(--c-primary);
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--c-secondary);
+    }
+  }
+
+  &__amount {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--c-secondary);
+  }
+}

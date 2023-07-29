@@ -1,3 +1,5 @@
+import { ProductCategories } from './constants';
+
 export interface Phone {
   id: string;
   category: string;
@@ -36,4 +38,10 @@ export interface PhoneDetails {
   camera: string;
   zoom: string;
   cell: string[];
+}
+
+export interface CategoryAmount {
+  [ProductCategories.PHONES]: number,
+  [ProductCategories.TABLETS]?: number,
+  [ProductCategories.ACCESSORIES]?: number,
 }

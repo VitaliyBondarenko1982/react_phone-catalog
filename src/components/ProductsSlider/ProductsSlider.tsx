@@ -4,7 +4,7 @@ import { Phone } from '../../types';
 
 import PhoneCard from '../PhoneCard';
 import { Icons, PRODUCTS_SLIDER_SETTINGS } from '../../constants';
-import { SliderArrow } from '../ui';
+import { Heading, SliderArrow } from '../ui';
 import { noop } from '../../utils';
 
 import './pruductsSlider.scss';
@@ -16,9 +16,7 @@ interface Props {
 const ProductsSlider: FC<Props> = ({ products, title }) => {
   return (
     <div className="products-slider">
-      <h2 className="products-slider__title">
-        {title}
-      </h2>
+      <Heading title={title} className="products-slider__title" />
       <Slider
         {...PRODUCTS_SLIDER_SETTINGS}
         prevArrow={(

@@ -8,7 +8,10 @@ import { Icons } from '../../constants';
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
