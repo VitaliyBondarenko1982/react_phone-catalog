@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MainSlider, ProductsSlider, ShopByCategory } from '../../components';
 import { Phone } from '../../types';
 
@@ -13,17 +13,30 @@ const Home = () => {
     getPhones(setPhones);
   }, []);
 
-  const slicedPhones = phones.slice(0, 12);
-
   const categoryAmount = {
     [ProductCategories.PHONES]: phones.length,
   };
+
+  const hotPricePhones = useMemo(() => {
+    return [...phones]
+      .sort((a, b) => {
+        return (b.fullPrice - b.price)
+          - (a.fullPrice - a.price);
+      }).slice(0, 16);
+  }, [phones]);
+
+  const newModelPhones = useMemo(() => {
+    return [...phones]
+      .sort((a, b) => {
+        return b.year - a.year;
+      }).slice(0, 16);
+  }, [phones]);
 
   return (
     <div className="home">
       <MainSlider />
       <div className="home__section">
-        <ProductsSlider products={slicedPhones} title="Hot prices" />
+        <ProductsSlider products={hotPricePhones} title="Hot prices" />
       </div>
       <div className="home__section">
         <ShopByCategory
@@ -31,7 +44,7 @@ const Home = () => {
         />
       </div>
       <div className="home__section">
-        <ProductsSlider products={slicedPhones} title="Brand new models" />
+        <ProductsSlider products={newModelPhones} title="Brand new models" />
       </div>
     </div>
   );
