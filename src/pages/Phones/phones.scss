@@ -4,11 +4,11 @@
   }
 
   &__amount {
+    font-family: var(--mont-medium);
     margin-bottom: 40px;
     color: var(--c-secondary);
     font-size: 14px;
     line-height: 21px;
-    font-weight: 500;
   }
 
   &__filters {

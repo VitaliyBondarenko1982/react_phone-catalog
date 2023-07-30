@@ -1,4 +1,4 @@
-import { ProductCategories } from './constants';
+import { ProductCategories, DropdownValue } from './constants';
 
 export interface Phone {
   id: string;
@@ -44,4 +44,9 @@ export interface CategoryAmount {
   [ProductCategories.PHONES]: number,
   [ProductCategories.TABLETS]?: number,
   [ProductCategories.ACCESSORIES]?: number,
+}
+
+export interface DropdownOption {
+  title: string,
+  value: DropdownValue,
 }

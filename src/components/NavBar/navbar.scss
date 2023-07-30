@@ -13,12 +13,12 @@
   }
 
   &__main-link {
+    font-family: var(--mont-bold);
     display: flex;
     padding: 24px 0;
     font-size: 12px;
     line-height: 16px;
     color: var(--c-secondary);
-    font-weight: 700;
     text-transform: uppercase;
     transition: color 0.3s ease;
   }

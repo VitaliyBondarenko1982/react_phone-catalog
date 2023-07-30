@@ -22,11 +22,11 @@
   }
 
   &__category {
+    font-family: var(--mont-semibold);
     display: flex;
     color: var(--c-primary);
     font-size: 20px;
     line-height: 26px;
-    font-weight: 600;
     transition: color 0.3s ease;
 
     &:hover {
@@ -35,8 +35,8 @@
   }
 
   &__amount {
+    font-family: var(--mont-medium);
     font-size: 14px;
-    font-weight: 500;
     line-height: 21px;
     color: var(--c-secondary);
   }

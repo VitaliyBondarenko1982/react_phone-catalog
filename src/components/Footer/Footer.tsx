@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 
 import './footer.scss';
-import { Button, Icon } from '../ui';
+import { Button } from '../ui';
 import { Icons } from '../../constants';
 
 const Footer = () => {
@@ -38,9 +38,11 @@ const Footer = () => {
         </ul>
         <div className="footer__on-top">
           <p className="footer__on-top-text">Back to top</p>
-          <Button onClick={scrollToTop} type="secondary">
-            <Icon iconId={Icons.ARROW_TOP} />
-          </Button>
+          <Button
+            onClick={scrollToTop}
+            type="secondary"
+            icon={Icons.ARROW_TOP}
+          />
         </div>
       </div>
     </footer>

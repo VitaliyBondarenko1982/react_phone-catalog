@@ -133,3 +133,47 @@ export const MAIN_SLIDER_IMAGES = [
   'img/banner-4.png',
   'img/banner-5.png',
 ];
+
+export enum DropdownValue {
+  SORT_BY_AGE = 'age',
+  SORT_BY_NAME = 'name',
+  SORT_BY_PRICE = 'price',
+  PER_ALL = 'all',
+  PER_4 = 4,
+  PER_8 = 8,
+  PER_16 = 16,
+}
+
+export const SORT_BY_OPTIONS = [
+  {
+    title: 'Newest',
+    value: DropdownValue.SORT_BY_AGE,
+  },
+  {
+    title: 'Alphabetically',
+    value: DropdownValue.SORT_BY_NAME,
+  },
+  {
+    title: 'Cheapest',
+    value: DropdownValue.SORT_BY_PRICE,
+  },
+];
+
+export const PAGINATION_OPTIONS = [
+  {
+    title: 'All',
+    value: DropdownValue.PER_ALL,
+  },
+  {
+    title: '4',
+    value: DropdownValue.PER_4,
+  },
+  {
+    title: '8',
+    value: DropdownValue.PER_8,
+  },
+  {
+    title: '16',
+    value: DropdownValue.PER_16,
+  },
+];

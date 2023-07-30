@@ -21,8 +21,8 @@
   }
 
   &__name {
+    font-family: var(--mont-medium);
     display: flex;
-    font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 8px;
@@ -36,8 +36,8 @@
   }
 
   &__price {
+    font-family: var(--mont-bold);
     margin-bottom: 8px;
-    font-weight: 700;
     font-size: 22px;
   }
 
@@ -59,12 +59,12 @@
   }
 
   &__details-item {
+    font-family: var(--mont-semibold);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
     font-size: 12px;
-    font-weight: 600;
   }
 
   &__details-title {

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Phone } from '../../types';
 import { AppRoutes, Icons } from '../../constants';
 import { noop, normalizeProductValue } from '../../utils';
-import { Button, Icon } from '../ui';
+import { Button } from '../ui';
 
 import './phoneCard.scss';
 
@@ -64,16 +64,14 @@ const PhoneCard: FC<Props> = ({ phone }) => {
         <Button
           onClick={noop}
           className="phone-card__add-to-card"
-        >
-          Add to cart
-        </Button>
+          title="Add to cart"
+        />
         <Button
           onClick={noop}
           type="secondary"
           className="phone-card__add-to-favorite"
-        >
-          <Icon iconId={Icons.HEART} />
-        </Button>
+          icon={Icons.HEART}
+        />
       </div>
     </div>
   );

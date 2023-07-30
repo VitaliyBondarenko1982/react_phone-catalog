@@ -11,7 +11,12 @@
   cursor: auto;
 }
 
+.is-space-between {
+  justify-content: space-between;
+}
+
 .primary {
+  font-family: var(--mont-semibold);
   padding: 8px 4px;
   border: 1px solid var(--c-primary);
   background-color: var(--c-primary);
@@ -26,8 +31,11 @@
 }
 
 .secondary {
+  font-family: var(--mont-semibold);
   padding: 7px;
   border: 1px solid var(--c-icons-secondary);
+  line-height: 20px;
+  font-size: 14px;
 
   &:hover {
     border-color: var(--c-primary);

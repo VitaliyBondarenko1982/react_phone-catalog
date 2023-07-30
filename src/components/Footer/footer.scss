@@ -18,12 +18,12 @@
   }
 
   &__link {
+    font-family: var(--mont-bold);
     display: flex;
     padding: 40px 0;
     font-size: 12px;
     line-height: 16px;
     color: var(--c-secondary);
-    font-weight: 700;
     text-transform: uppercase;
   }
 
@@ -32,9 +32,9 @@
     align-items: center;
 
     &-text {
+      font-family: var(--mont-medium);
       margin-right: 16px;
       font-size: 12px;
-      font-weight: 600;
       color: var(--c-secondary);
     }
   }

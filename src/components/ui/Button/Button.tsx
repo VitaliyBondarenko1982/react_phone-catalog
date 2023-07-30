@@ -1,21 +1,26 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
 
 import './button.scss';
+import { noop } from '../../../utils';
+import Icon from '../Icon';
+import { Icons } from '../../../constants';
 
 interface Props {
-  onClick: VoidFunction;
-  children: ReactNode;
+  onClick?: VoidFunction;
+  icon?: Icons;
+  title?: string;
   type?: 'primary' | 'secondary' | 'rounded';
   isDisabled?: boolean;
   className?: string;
 }
 const Button: FC<Props> = ({
   type = 'primary',
-  onClick,
+  onClick = noop,
   isDisabled = false,
-  children,
   className,
+  title,
+  icon,
 }) => {
   return (
     <button
@@ -24,9 +29,15 @@ const Button: FC<Props> = ({
       onClick={onClick}
       className={cn('button', className, type, {
         'is-disabled': isDisabled,
+        'is-space-between': !!title && !!icon,
       })}
     >
-      {children}
+      {title && (
+        <span className="button__title">
+          {title}
+        </span>
+      )}
+      {icon && <Icon iconId={icon} />}
     </button>
   );
 };

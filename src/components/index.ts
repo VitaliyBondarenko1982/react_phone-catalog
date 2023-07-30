@@ -6,3 +6,4 @@ export { default as ProductsSlider } from './ProductsSlider';
 export { default as ShopByCategory } from './ShopByCategory';
 export { Heading } from './ui';
 export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as Filters } from './Filters';
