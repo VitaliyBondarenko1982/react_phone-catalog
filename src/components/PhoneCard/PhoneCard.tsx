@@ -26,7 +26,7 @@ const PhoneCard: FC<Props> = ({ phone }) => {
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;
 
   return (
-    <div className="phone-card">
+    <div className="phone-card" data-cy="cardsContainer">
       <Link
         to={phoneDetailsPath}
         className="phone-card__link"

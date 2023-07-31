@@ -25,6 +25,11 @@
     line-height: 16px;
     color: var(--c-secondary);
     text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--c-primary);
+    }
   }
 
   &__on-top {

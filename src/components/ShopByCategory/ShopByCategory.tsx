@@ -14,7 +14,7 @@ const ShopByCategory: FC<Props> = ({ amount }) => {
   return (
     <div className="shop-by-category">
       <Heading title="Shop by category" className="shop-by-category__title" />
-      <ul className="shop-by-category__list">
+      <ul className="shop-by-category__list" data-cy="categoryLinksContainer">
         {BY_CATEGORY_ITEMS.map(({
           id, to, category, image,
         }) => (
