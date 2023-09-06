@@ -26,7 +26,8 @@
     z-index: 1;
   }
 
-  &__option {
+  &__link {
+    display: flex;
     font-family: var(--c-medium);
     cursor: pointer;
     padding: 6px 12px;
@@ -36,9 +37,11 @@
     transition: background-color 0.3s ease,
       color 0.3s ease;
 
-    &:hover {
+    &:hover,
+    &.is-active {
       background-color: var(--c-hover_BG);
       color: var(--c-primary);
+      font-weight: 500;
     }
   }
 }

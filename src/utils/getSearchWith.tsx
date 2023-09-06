@@ -16,10 +16,10 @@ function getSearchWith(
         newParams.delete(key);
 
         value.forEach(part => {
-          newParams.append(key, part);
+          newParams.append(key, part as string);
         });
       } else {
-        newParams.set(key, value);
+        newParams.set(key, value as string);
       }
     });
 

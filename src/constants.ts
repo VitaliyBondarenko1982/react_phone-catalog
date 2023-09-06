@@ -138,13 +138,25 @@ export enum DropdownValue {
   SORT_BY_AGE = 'age',
   SORT_BY_NAME = 'name',
   SORT_BY_PRICE = 'price',
-  PER_ALL = 'all',
-  PER_4 = 4,
-  PER_8 = 8,
-  PER_16 = 16,
+  SORT_BY_NONE = '',
+  PER_ALL = '',
+  PER_4 = '4',
+  PER_8 = '8',
+  PER_16 = '16',
+}
+
+export enum ParamsNames {
+  QUERY = 'query',
+  SORT = 'sort',
+  PAGE = 'page',
+  PER_PAGE = 'perPage',
 }
 
 export const SORT_BY_OPTIONS = [
+  {
+    title: 'Without sort',
+    value: DropdownValue.SORT_BY_NONE,
+  },
   {
     title: 'Newest',
     value: DropdownValue.SORT_BY_AGE,

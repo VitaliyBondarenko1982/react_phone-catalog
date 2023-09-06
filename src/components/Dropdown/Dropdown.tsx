@@ -2,10 +2,14 @@ import './dropdown.scss';
 import {
   FC, useMemo, useRef, useState,
 } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import cn from 'classnames';
 import { Button } from '../ui';
-import { Icons, DropdownValue } from '../../constants';
-import { DropdownOption, ParamsNames } from '../../types';
+import { Icons, DropdownValue, ParamsNames } from '../../constants';
+import { DropdownOption, SearchParams } from '../../types';
 import { useOnClickOutside } from '../../hooks';
+import SearchLink from '../SearchLink';
+import { getSearchWith } from '../../utils';
 
 interface Props {
   options: DropdownOption[];
@@ -20,25 +24,34 @@ const Dropdown: FC<Props> = ({
   const [isDropdown, setIsDropdown] = useState(false);
   const refContainer = useRef<HTMLUListElement>(null);
   const refs = useMemo(() => [refContainer], []);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchField = searchParams.get(paramsName);
 
   const onToggleDropdown = () => setIsDropdown(prev => !prev);
 
   const onCloseDropdown = () => setIsDropdown(false);
 
+  function setSearchWith(params: SearchParams) {
+    const search = getSearchWith(searchParams, params);
+
+    setSearchParams(search);
+  }
+
   const onSelect = (optionValue: DropdownValue) => () => {
-    // eslint-disable-next-line no-console
-    console.log(optionValue, paramsName);
+    setSearchWith({ [paramsName]: optionValue || null });
     setIsDropdown(false);
   };
 
   useOnClickOutside({ refs, handler: onCloseDropdown, isOpen: isDropdown });
+
+  const selectedOption = options.find(option => option.value === searchField);
 
   return (
     <div className="dropdown">
       <label className="dropdown__label">{label}</label>
       <Button
         type="secondary"
-        title={defaultValue || options[0].title}
+        title={selectedOption?.title || defaultValue}
         className="dropdown__button"
         onClick={onToggleDropdown}
         icon={Icons.ARROW_BOTTOM}
@@ -52,7 +65,16 @@ const Dropdown: FC<Props> = ({
               onClick={onSelect(value)}
               role="presentation"
             >
-              {title}
+              <SearchLink
+                params={{ [paramsName]: value }}
+                className={cn('dropdown__link', {
+                  'is-active': searchField
+                    ? searchField === value
+                    : !value,
+                })}
+              >
+                {title}
+              </SearchLink>
             </li>
           ))}
         </ul>
