@@ -50,3 +50,14 @@ export interface DropdownOption {
   title: string,
   value: DropdownValue,
 }
+
+export type SearchParams = {
+  [key: string]: string | string[] | null,
+};
+
+export enum ParamsNames {
+  QUERY = 'query',
+  SORT = 'sort',
+  PAGE = 'page',
+  PER_PAGE = 'perPage',
+}
