@@ -9,7 +9,7 @@ import { Icons } from '../../../constants';
 interface Props {
   onClick?: VoidFunction;
   icon?: Icons;
-  title?: string;
+  title?: string | number;
   type?: 'primary' | 'secondary' | 'rounded';
   isDisabled?: boolean;
   className?: string;
@@ -32,11 +32,7 @@ const Button: FC<Props> = ({
         'is-space-between': !!title && !!icon,
       })}
     >
-      {title && (
-        <span className="button__title">
-          {title}
-        </span>
-      )}
+      {title}
       {icon && <Icon iconId={icon} />}
     </button>
   );

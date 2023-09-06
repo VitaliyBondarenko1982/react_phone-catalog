@@ -5,7 +5,7 @@ import {
 import { useSearchParams } from 'react-router-dom';
 import cn from 'classnames';
 import { Button } from '../ui';
-import { Icons, DropdownValue, ParamsNames } from '../../constants';
+import { DropdownValue, Icons, ParamsNames } from '../../constants';
 import { DropdownOption, SearchParams } from '../../types';
 import { useOnClickOutside } from '../../hooks';
 import SearchLink from '../SearchLink';
@@ -26,6 +26,7 @@ const Dropdown: FC<Props> = ({
   const refs = useMemo(() => [refContainer], []);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchField = searchParams.get(paramsName);
+  const page = searchParams.get(ParamsNames.PAGE);
 
   const onToggleDropdown = () => setIsDropdown(prev => !prev);
 
@@ -38,7 +39,14 @@ const Dropdown: FC<Props> = ({
   }
 
   const onSelect = (optionValue: DropdownValue) => () => {
-    setSearchWith({ [paramsName]: optionValue || null });
+    const pageValue = optionValue ? '1' : null;
+
+    setSearchWith({
+      [paramsName]: optionValue || null,
+      [ParamsNames.PAGE]: paramsName === ParamsNames.PER_PAGE
+        ? pageValue : page,
+    });
+
     setIsDropdown(false);
   };
 

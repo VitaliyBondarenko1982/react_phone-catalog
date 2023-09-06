@@ -20,4 +20,8 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 40px 16px;
   }
+
+  &__pagination {
+    margin-top: 40px;
+  }
 }

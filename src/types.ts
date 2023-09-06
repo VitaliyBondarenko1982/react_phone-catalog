@@ -52,5 +52,5 @@ export interface DropdownOption {
 }
 
 export type SearchParams = {
-  [key: string]: DropdownValue | DropdownValue[] | null,
+  [key: string]: DropdownValue | DropdownValue[] | string | string[] | null,
 };
