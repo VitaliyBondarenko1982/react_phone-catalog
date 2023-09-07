@@ -1,3 +1,8 @@
+.breadcrumbs__item {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
 .breadcrumbs {
   width: 1136px;
   margin: 0 auto;
@@ -6,7 +11,6 @@
   align-items: center;
 }
 .breadcrumbs__item {
-  font-family: var(--mont-semibold);
   display: flex;
   align-items: center;
   margin-right: 8px;

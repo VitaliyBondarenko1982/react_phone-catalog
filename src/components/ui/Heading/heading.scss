@@ -1,5 +1,7 @@
+@import '../../../styles/extends';
+
 .heading {
-  font-family: var(--mont-bold);
+  @extend %font-bold;
   font-size: 32px;
   line-height: 40px;
   color: var(--c-primary);

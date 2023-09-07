@@ -1,3 +1,13 @@
+.shop-by-category__amount {
+  font-family: var(--mont-medium);
+  font-weight: 500;
+}
+
+.shop-by-category__category {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
 .shop-by-category__title {
   margin-bottom: 24px;
 }
@@ -16,7 +26,6 @@
   transform: scale(1.03);
 }
 .shop-by-category__category {
-  font-family: var(--mont-semibold);
   display: flex;
   color: var(--c-primary);
   font-size: 20px;
@@ -27,7 +36,6 @@
   color: var(--c-secondary);
 }
 .shop-by-category__amount {
-  font-family: var(--mont-medium);
   font-size: 14px;
   line-height: 21px;
   color: var(--c-secondary);

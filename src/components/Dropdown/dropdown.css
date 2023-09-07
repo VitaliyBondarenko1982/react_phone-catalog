@@ -1,9 +1,18 @@
+.dropdown__link {
+  font-family: var(--mont-medium);
+  font-weight: 500;
+}
+
+.dropdown__label {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
 .dropdown {
   width: 176px;
   position: relative;
 }
 .dropdown__label {
-  font-family: var(--mont-semibold);
   font-size: 12px;
   line-height: 15px;
   display: block;
@@ -25,7 +34,6 @@
 }
 .dropdown__link {
   display: flex;
-  font-family: var(--c-medium);
   cursor: pointer;
   padding: 6px 12px;
   font-size: 14px;
@@ -33,11 +41,9 @@
   color: var(--c-secondary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.dropdown__link:hover,
-.dropdown__link.is-active {
+.dropdown__link:hover, .dropdown__link.is-active {
   background-color: var(--c-hover_BG);
   color: var(--c-primary);
-  font-weight: 500;
 }
 
 /*# sourceMappingURL=dropdown.css.map */

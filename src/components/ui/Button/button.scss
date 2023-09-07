@@ -1,5 +1,7 @@
+@import '../../../styles/extends';
+
 .button {
-  font-family: var(--mont-semibold);
+  @extend %font-semibold;
   display: flex;
   justify-content: center;
   align-items: center;

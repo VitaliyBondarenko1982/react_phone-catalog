@@ -1,10 +1,12 @@
+@import '../../styles/extends';
+
 .phones {
   &__title {
     margin-bottom: 8px;
   }
 
   &__amount {
-    font-family: var(--mont-medium);
+    @extend %font-medium;
     margin-bottom: 40px;
     color: var(--c-secondary);
     font-size: 14px;

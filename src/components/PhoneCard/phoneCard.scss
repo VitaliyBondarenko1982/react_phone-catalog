@@ -1,3 +1,5 @@
+@import '../../styles/extends';
+
 .phone-card {
   width: 272px;
   padding: 37px 24px 24px;
@@ -21,7 +23,7 @@
   }
 
   &__name {
-    font-family: var(--mont-medium);
+    @extend %font-medium;
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -36,7 +38,7 @@
   }
 
   &__price {
-    font-family: var(--mont-bold);
+    @extend %font-bold;
     margin-bottom: 8px;
     font-size: 22px;
   }
@@ -59,7 +61,7 @@
   }
 
   &__details-item {
-    font-family: var(--mont-semibold);
+    @extend %font-semibold;
     display: flex;
     justify-content: space-between;
     align-items: center;

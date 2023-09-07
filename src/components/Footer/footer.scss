@@ -1,3 +1,5 @@
+@import '../../styles/extends';
+
 .footer {
   box-shadow: 0 -1px 0 0 var(--c-elements);
 
@@ -18,7 +20,7 @@
   }
 
   &__link {
-    font-family: var(--mont-bold);
+    @extend %font-bold;
     display: flex;
     padding: 40px 0;
     font-size: 12px;
@@ -37,7 +39,7 @@
     align-items: center;
 
     &-text {
-      font-family: var(--mont-medium);
+      @extend %font-medium;
       margin-right: 16px;
       font-size: 12px;
       color: var(--c-secondary);

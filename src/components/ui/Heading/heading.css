@@ -1,5 +1,9 @@
 .heading {
   font-family: var(--mont-bold);
+  font-weight: 700;
+}
+
+.heading {
   font-size: 32px;
   line-height: 40px;
   color: var(--c-primary);

@@ -1,3 +1,5 @@
+@import '../../styles/extends';
+
 .navbar {
   display: flex;
   width: 100%;
@@ -13,7 +15,7 @@
   }
 
   &__main-link {
-    font-family: var(--mont-bold);
+    @extend %font-bold;
     display: flex;
     padding: 24px 0;
     font-size: 12px;

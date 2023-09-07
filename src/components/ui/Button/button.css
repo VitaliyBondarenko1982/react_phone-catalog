@@ -1,5 +1,9 @@
 .button {
   font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;

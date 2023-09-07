@@ -1,3 +1,5 @@
+@import '../../styles/extends';
+
 .shop-by-category {
   &__title {
     margin-bottom: 24px;
@@ -22,7 +24,7 @@
   }
 
   &__category {
-    font-family: var(--mont-semibold);
+    @extend %font-semibold;
     display: flex;
     color: var(--c-primary);
     font-size: 20px;
@@ -35,7 +37,7 @@
   }
 
   &__amount {
-    font-family: var(--mont-medium);
+    @extend %font-medium;
     font-size: 14px;
     line-height: 21px;
     color: var(--c-secondary);

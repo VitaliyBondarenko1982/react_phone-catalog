@@ -1,3 +1,13 @@
+.footer__on-top-text {
+  font-family: var(--mont-medium);
+  font-weight: 500;
+}
+
+.footer__link {
+  font-family: var(--mont-bold);
+  font-weight: 700;
+}
+
 .footer {
   box-shadow: 0 -1px 0 0 var(--c-elements);
 }
@@ -15,7 +25,6 @@
   margin-right: 64px;
 }
 .footer__link {
-  font-family: var(--mont-bold);
   display: flex;
   padding: 40px 0;
   font-size: 12px;
@@ -32,7 +41,6 @@
   align-items: center;
 }
 .footer__on-top-text {
-  font-family: var(--mont-medium);
   margin-right: 16px;
   font-size: 12px;
   color: var(--c-secondary);
