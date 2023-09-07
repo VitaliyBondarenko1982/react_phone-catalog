@@ -3,18 +3,21 @@ import cn from 'classnames';
 import { NAV_MAIN_LINKS, NAV_SIDE_LINKS } from '../../constants';
 import { Icon } from '../ui';
 
-import './navbar.scss';
+import s from './NavBar.module.scss';
+
+// eslint-disable-next-line no-console
+console.log(s);
 
 const NavBar = () => {
   return (
-    <nav className="navbar">
-      <ul className="navbar__main-list">
+    <nav className={s.container}>
+      <ul className={s.mainList}>
         {NAV_MAIN_LINKS.map(({ to, title }) => (
-          <li className="navbar__main-item">
+          <li className={s.mainItem}>
             <NavLink
               to={to}
-              className={({ isActive }) => cn('navbar__main-link', {
-                'is-active': isActive,
+              className={({ isActive }) => cn(s.mainLink, {
+                [s.isActive]: isActive,
               })}
             >
               {title}
@@ -22,13 +25,13 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <ul className="navbar__side-list">
+      <ul className={s.sideList}>
         {NAV_SIDE_LINKS.map(({ to, icon }) => (
-          <li className="navbar__side-item">
+          <li className={s.sideItem}>
             <NavLink
               to={to}
-              className={({ isActive }) => cn('navbar__side-link', {
-                'is-active': isActive,
+              className={({ isActive }) => cn(s.sideLink, {
+                [s.isActive]: isActive,
               })}
             >
               <Icon iconId={icon} />

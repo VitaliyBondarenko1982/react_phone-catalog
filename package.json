@@ -28,8 +28,10 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/react-slick": "^0.23.10",
+    "concurrently": "^8.2.1",
     "cypress": "^9.5.3",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.11.2",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
@@ -40,12 +42,14 @@
     "node-sass": "^6.0.1",
     "prettier": "^2.8.8",
     "stylelint": "^13.13.1",
+    "typed-scss-modules": "^7.1.4",
     "typescript": "^4.6.3"
   },
   "scripts": {
     "prepare": "husky install",
     "prettier": "prettier --write . --ignore-path .gitignore",
     "start": "mate-scripts start -l",
+    "dev": " concurrently \"npm start\" \"npm run gen:scss-types\"",
     "build": "mate-scripts build",
     "test": "mate-scripts test",
     "lint-js": "mate-scripts lint -j",
@@ -55,7 +59,8 @@
     "update": "mate-scripts update",
     "postinstall": "npm run update && cypress verify",
     "predeploy": "npm run build",
-    "deploy": "mate-scripts deploy"
+    "deploy": "mate-scripts deploy",
+    "gen:scss-types": "npx typed-scss-modules src -w"
   },
   "browserslist": {
     "production": [

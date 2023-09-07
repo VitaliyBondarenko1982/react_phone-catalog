@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 
 import { Phone } from '../../types';
 import { AppRoutes, Icons } from '../../constants';
 import { noop, normalizeProductValue } from '../../utils';
 import { Button } from '../ui';
 
-import './phoneCard.scss';
+import s from './PhoneCard.module.scss';
 
 interface Props {
   phone: Phone;
@@ -20,45 +21,40 @@ const PhoneCard: FC<Props> = ({ phone }) => {
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;
 
   return (
-    <div className="phone-card" data-cy="cardsContainer">
-      <Link to={phoneDetailsPath} className="phone-card__link">
-        <img className="phone-card__image" src={image} alt={name} />
+    <div
+      className={cn(s.container, '__app-PhoneCard-container')}
+      data-cy="cardsContainer"
+    >
+      <Link to={phoneDetailsPath} className={s.link}>
+        <img className={s.image} src={image} alt={name} />
       </Link>
-      <Link to={phoneDetailsPath} className="phone-card__name">
+      <Link to={phoneDetailsPath} className={s.name}>
         {name}
       </Link>
-      <div className="phone-card__price">
-        <span className="phone-card__current-price">{`$${price}`}</span>
-        <span className="phone-card__full-price">{`$${fullPrice}`}</span>
+      <div className={s.price}>
+        <span className={s.currentPrice}>{`$${price}`}</span>
+        <span className={s.fullPrice}>{`$${fullPrice}`}</span>
       </div>
-      <ul className="phone-card__details-list">
-        <li className="phone-card__details-item">
-          <span className="phone-card__details-title">Screen</span>
-          <span className="phone-card__details-value">{screen}</span>
+      <ul className={s.detailsList}>
+        <li className={s.detailsItem}>
+          <span className={s.detailsTitle}>Screen</span>
+          <span>{screen}</span>
         </li>
-        <li className="phone-card__details-item">
-          <span className="phone-card__details-title">Capacity</span>
-          <span className="phone-card__details-value">
-            {normalizeProductValue(capacity)}
-          </span>
+        <li className={s.detailsItem}>
+          <span className={s.detailsTitle}>Capacity</span>
+          <span>{normalizeProductValue(capacity)}</span>
         </li>
-        <li className="phone-card__details-item">
-          <span className="phone-card__details-title">RAM</span>
-          <span className="phone-card__details-value">
-            {normalizeProductValue(ram)}
-          </span>
+        <li className={s.detailsItem}>
+          <span className={s.detailsTitle}>RAM</span>
+          <span>{normalizeProductValue(ram)}</span>
         </li>
       </ul>
-      <div className="phone-card__buttons">
-        <Button
-          onClick={noop}
-          className="phone-card__add-to-card"
-          title="Add to cart"
-        />
+      <div className={s.buttons}>
+        <Button onClick={noop} className={s.addToCard} title="Add to cart" />
         <Button
           onClick={noop}
           type="secondary"
-          className="phone-card__add-to-favorite"
+          className={s.addToFavorite}
           icon={Icons.HEART}
         />
       </div>

@@ -1,0 +1,27 @@
+@import '../../styles/extends.scss';
+
+.title {
+  margin-bottom: 8px;
+}
+
+.amount {
+  @extend %font-medium;
+  margin-bottom: 40px;
+  color: var(--c-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.filters {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 16px;
+}
+
+.pagination {
+  margin-top: 40px;
+}

@@ -1,10 +1,11 @@
 import Logo from '../Logo';
 import NavBar from '../NavBar';
-import './header.scss';
+
+import s from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className={s.container}>
       <Logo />
       <NavBar />
     </header>

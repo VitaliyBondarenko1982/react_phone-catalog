@@ -1,0 +1,32 @@
+.container {
+  margin-bottom: 100px;
+}
+
+.slide {
+  margin: auto;
+  width: calc(100% - 96px) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .slide {
+    width: 100% !important;
+    padding: 0 5px;
+  }
+}
+
+.image {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: var(--track-height);
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .image {
+    height: 27.7777777778vw;
+  }
+}
+
+/*# sourceMappingURL=MainSlider.module.css.map */

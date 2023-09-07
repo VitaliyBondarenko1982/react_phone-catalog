@@ -6,7 +6,7 @@ import { getPhones } from '../../api';
 import PhoneCard from '../../components/PhoneCard';
 import { ParamsNames } from '../../constants';
 
-import './phones.scss';
+import s from './Phones.module.scss';
 
 const Phones = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -32,19 +32,19 @@ const Phones = () => {
   }, []);
 
   return (
-    <div className="phones">
-      <Heading tag="h1" title="Mobile phones" className="phones__title" />
-      <p className="phones__amount">{`${phones.length} models`}</p>
-      <div className="phones__filters">
+    <div>
+      <Heading tag="h1" title="Mobile phones" className={s.title} />
+      <p className={s.amount}>{`${phones.length} models`}</p>
+      <div className={s.filters}>
         <Filters />
       </div>
-      <div className="phones__list">
+      <div className={s.list}>
         {visiblePhones.map((phone) => (
           <PhoneCard phone={phone} />
         ))}
       </div>
       {isPagination && (
-        <div className="phones__pagination">
+        <div className={s.pagination}>
           <Pagination
             itemsLength={phones.length}
             currentPage={page}

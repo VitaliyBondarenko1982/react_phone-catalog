@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
+import cn from 'classnames';
 
 import {
   Icons,
@@ -10,9 +11,10 @@ import { noop } from '../../utils';
 
 import { SliderArrow } from '../ui';
 import 'slick-carousel/slick/slick.scss';
-import 'slick-carousel/slick/slick-theme.scss';
 
-import './mainSlider.scss';
+import 'slick-carousel/slick/slick-theme.scss';
+import './slickSlider.scss';
+import s from './MainSlider.module.scss';
 
 const MainSlider = () => {
   const slider = useRef<Slider | null>(null);
@@ -34,7 +36,7 @@ const MainSlider = () => {
     <Slider
       ref={slider}
       {...MAIN_SLIDER_SETTINGS}
-      className="slider"
+      className={cn(s.container, '__app-MainSlider-container')}
       prevArrow={
         <SliderArrow onClick={noop} icon={Icons.ARROW_LEFT} className="" />
       }
@@ -43,8 +45,8 @@ const MainSlider = () => {
       }
     >
       {MAIN_SLIDER_IMAGES.map((image) => (
-        <div className="slider__item">
-          <img className="slider__image" src={image} alt={image} />
+        <div className={s.slide}>
+          <img className={s.image} src={image} alt={image} />
         </div>
       ))}
     </Slider>

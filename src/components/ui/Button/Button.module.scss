@@ -1,0 +1,48 @@
+@import '../../../styles/extends.scss';
+
+.container {
+  @extend %font-semibold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: unset;
+  border: unset;
+  transition: border-color 0.3s ease;
+}
+
+.isDisabled {
+  cursor: auto;
+}
+
+.isSpaceBetween {
+  justify-content: space-between;
+}
+
+.primary {
+  padding: 8px 4px;
+  border: 1px solid var(--c-primary);
+  background-color: var(--c-primary);
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--c-white);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
+  }
+}
+
+.secondary {
+  padding: 7px;
+  border: 1px solid var(--c-icons-secondary);
+  line-height: 20px;
+  font-size: 14px;
+
+  &:hover {
+    border-color: var(--c-primary);
+  }
+
+  &.isDisabled {
+    border-color: var(--c-elements);
+  }
+}

@@ -1,4 +1,3 @@
-import './filters.scss';
 import Dropdown from '../Dropdown';
 import {
   PAGINATION_OPTIONS,
@@ -6,8 +5,10 @@ import {
   ParamsNames,
 } from '../../constants';
 
+import s from './Filters.module.scss';
+
 const Filters = () => (
-  <div className="filters">
+  <div className={s.container}>
     <Dropdown
       options={SORT_BY_OPTIONS}
       label="By sort"

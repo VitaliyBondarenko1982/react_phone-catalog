@@ -1,0 +1,57 @@
+@import '../../styles/extends.scss';
+
+.container {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.mainList {
+  display: flex;
+}
+
+.mainItem:not(:last-child) {
+  margin-right: 64px;
+}
+
+.mainLink {
+  @extend %font-bold;
+  display: flex;
+  padding: 24px 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--c-secondary);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.sideList {
+  display: flex;
+  align-items: center;
+}
+
+.sideItem {
+  box-shadow: -1px 0 0 0 var(--c-elements);
+  display: flex;
+}
+
+.sideLink {
+  display: flex;
+  padding: 24px;
+}
+
+.isActive {
+  color: var(--c-primary);
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--c-primary);
+    bottom: 0;
+    left: 0;
+  }
+}

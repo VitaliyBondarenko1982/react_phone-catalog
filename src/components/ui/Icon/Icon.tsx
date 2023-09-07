@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
-import './icon.scss';
+import s from './Icon.module.scss';
 
 interface Props {
   iconId: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 const Icon: FC<Props> = ({ iconId, className }) => {
   return (
-    <svg className={cn('icon', '__app-icon', className)}>
+    <svg className={cn(s.container, className, '__app-Icon-container')}>
       <use href={`img/sprite.svg#${iconId}`} />
     </svg>
   );

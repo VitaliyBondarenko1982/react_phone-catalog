@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
-import './button.scss';
 import { noop } from '../../../utils';
 import Icon from '../Icon';
 import { Icons } from '../../../constants';
+import s from './Button.module.scss';
 
 interface Props {
   onClick?: VoidFunction;
@@ -27,9 +27,11 @@ const Button: FC<Props> = ({
       type="button"
       disabled={isDisabled}
       onClick={onClick}
-      className={cn('button', className, type, {
-        'is-disabled': isDisabled,
-        'is-space-between': !!title && !!icon,
+      className={cn(s.container, className, {
+        [s.isDisabled]: isDisabled,
+        [s.isSpaceBetween]: !!title && !!icon,
+        [s.primary]: type === 'primary',
+        [s.secondary]: type === 'secondary',
       })}
     >
       {title}

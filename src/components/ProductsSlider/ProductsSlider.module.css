@@ -1,0 +1,39 @@
+.container .slick-slide .__app-PhoneCard-container {
+  margin: 0 6px;
+}
+.container .slick-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -60px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--c-icons-secondary);
+  transition: 0.3s ease;
+  background-color: #fff;
+}
+.container .slick-arrow:before {
+  content: unset;
+}
+@media (max-width: 500px) {
+  .container .slick-arrow {
+    display: none !important;
+  }
+}
+.container .slick-arrow:hover {
+  border-color: var(--c-primary);
+}
+.container .slick-arrow.slick-prev {
+  left: unset;
+  right: 54px;
+  z-index: 1;
+}
+.container .slick-arrow.slick-next {
+  right: 6px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+/*# sourceMappingURL=ProductsSlider.module.css.map */

@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { MainSlider, ProductsSlider, ShopByCategory } from '../../components';
 import { Phone } from '../../types';
-
-import './home.scss';
 import { getPhones } from '../../api';
 import { ProductCategories } from '../../constants';
+
+import s from './Home.module.scss';
 
 const Home = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -34,15 +34,15 @@ const Home = () => {
   }, [phones]);
 
   return (
-    <div className="home">
+    <div>
       <MainSlider />
-      <div className="home__section">
+      <div className={s.section}>
         <ProductsSlider products={hotPricePhones} title="Hot prices" />
       </div>
-      <div className="home__section">
+      <div className={s.section}>
         <ShopByCategory amount={categoryAmount} />
       </div>
-      <div className="home__section">
+      <div className={s.section}>
         <ProductsSlider products={newModelPhones} title="Brand new models" />
       </div>
     </div>

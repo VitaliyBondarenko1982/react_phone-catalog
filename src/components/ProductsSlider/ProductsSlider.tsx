@@ -1,13 +1,15 @@
 import { FC } from 'react';
 import Slider from 'react-slick';
-import { Phone } from '../../types';
+import cn from 'classnames';
 
+import { Phone } from '../../types';
 import PhoneCard from '../PhoneCard';
 import { Icons, PRODUCTS_SLIDER_SETTINGS } from '../../constants';
 import { Heading, SliderArrow } from '../ui';
 import { noop } from '../../utils';
 
-import './pruductsSlider.scss';
+import './slickSlider.scss';
+import s from './ProductsSlider.module.scss';
 
 interface Props {
   products: Phone[];
@@ -15,8 +17,8 @@ interface Props {
 }
 const ProductsSlider: FC<Props> = ({ products, title }) => {
   return (
-    <div className="products-slider">
-      <Heading title={title} className="products-slider__title" />
+    <div className={cn(s.container, '__app-ProductsSlider-container')}>
+      <Heading title={title} className={s.title} />
       <Slider
         {...PRODUCTS_SLIDER_SETTINGS}
         prevArrow={

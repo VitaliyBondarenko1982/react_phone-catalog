@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import cn from 'classnames';
 import { getNumbers } from '../../utils';
 import SearchLink from '../SearchLink';
 import { Icons, ParamsNames } from '../../constants';
-import './pagination.scss';
+import s from './Pagination.module.scss';
 import { Button } from '../ui';
 
 interface Props {
@@ -19,18 +18,15 @@ const Pagination: FC<Props> = ({ itemsLength, currentPage, perPage }) => {
   const isLastPage = currentPage === pagesCount;
 
   return (
-    <div className="pagination">
-      <ul className="pagination__list">
-        <li className="pagination__item">
+    <div className={s.container}>
+      <ul className={s.list}>
+        <li className={s.item}>
           <SearchLink
             params={{
               [ParamsNames.PAGE]: isFirstPage
                 ? `${currentPage}`
                 : `${currentPage - 1}`,
             }}
-            className={cn('pagination__link', {
-              'is-disabled': isFirstPage,
-            })}
           >
             <Button
               type="secondary"
@@ -40,31 +36,23 @@ const Pagination: FC<Props> = ({ itemsLength, currentPage, perPage }) => {
           </SearchLink>
         </li>
         {pages.map((page) => (
-          <li key={page} className="pagination__item">
-            <SearchLink
-              params={{ [ParamsNames.PAGE]: `${page}` }}
-              className={cn('pagination__link', {
-                'is-active': currentPage === page,
-              })}
-            >
+          <li key={page} className={s.item}>
+            <SearchLink params={{ [ParamsNames.PAGE]: `${page}` }}>
               <Button
                 type={currentPage === page ? 'primary' : 'secondary'}
                 title={page}
-                className="pagination__button"
+                className={s.button}
               />
             </SearchLink>
           </li>
         ))}
-        <li className="pagination__item">
+        <li className={s.item}>
           <SearchLink
             params={{
               [ParamsNames.PAGE]: isLastPage
                 ? `${currentPage}`
                 : `${currentPage + 1}`,
             }}
-            className={cn('pagination__link', {
-              'is-disabled': isLastPage,
-            })}
           >
             <Button
               type="secondary"

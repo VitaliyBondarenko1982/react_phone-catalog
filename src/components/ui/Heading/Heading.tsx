@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
-import './heading.scss';
+import s from './Heading.module.scss';
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ interface Props {
 const Heading: FC<Props> = ({ title, tag, className }) => {
   const Tag = tag || 'h2';
 
-  return <Tag className={cn('heading', className)}>{title}</Tag>;
+  return <Tag className={cn(s.container, className)}>{title}</Tag>;
 };
 
 export default Heading;

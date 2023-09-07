@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-
 import Logo from '../Logo';
-
-import './footer.scss';
 import { Button } from '../ui';
 import { Icons } from '../../constants';
+
+import s from './Footer.module.scss';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,29 +14,29 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer__container">
+    <footer className={s.container}>
+      <div className={s.content}>
         <Logo />
-        <ul className="footer__list">
-          <li className="footer__item">
+        <ul className={s.list}>
+          <li className={s.item}>
             <Link
               to="https://www.linkedin.com/in/vitalii-bondarenko-755b001a2/"
-              className="footer__link"
+              className={s.link}
             >
               Github
             </Link>
           </li>
-          <li className="footer__item">
+          <li className={s.item}>
             <Link
               to="https://www.linkedin.com/in/vitalii-bondarenko-755b001a2/"
-              className="footer__link"
+              className={s.link}
             >
               Contacts
             </Link>
           </li>
         </ul>
-        <div className="footer__on-top">
-          <p className="footer__on-top-text">Back to top</p>
+        <div className={s.onTop}>
+          <p className={s.onTopText}>Back to top</p>
           <Button
             onClick={scrollToTop}
             type="secondary"

@@ -1,0 +1,54 @@
+.link {
+  font-family: var(--mont-medium);
+  font-weight: 500;
+}
+
+.label {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
+.container {
+  width: 176px;
+  position: relative;
+}
+
+.label {
+  font-size: 12px;
+  line-height: 15px;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--c-secondary);
+}
+
+.button {
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.options {
+  margin-top: 4px;
+  border: 1px solid var(--c-elements);
+  background-color: var(--c-white);
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.link {
+  display: flex;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--c-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.link:hover,
+.link.isActive {
+  background-color: var(--c-hover_BG);
+  color: var(--c-primary);
+}
+
+/*# sourceMappingURL=Dropdown.module.css.map */

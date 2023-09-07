@@ -1,4 +1,3 @@
-import './dropdown.scss';
 import {
   FC, useMemo, useRef, useState,
 } from 'react';
@@ -10,6 +9,8 @@ import { DropdownOption, SearchParams } from '../../types';
 import { useOnClickOutside } from '../../hooks';
 import SearchLink from '../SearchLink';
 import { getSearchWith } from '../../utils';
+
+import s from './Dropdown.module.scss';
 
 interface Props {
   options: DropdownOption[];
@@ -55,28 +56,23 @@ const Dropdown: FC<Props> = ({
   const selectedOption = options.find((option) => option.value === searchField);
 
   return (
-    <div className="dropdown">
-      <label className="dropdown__label">{label}</label>
+    <div className={s.container}>
+      <label className={s.label}>{label}</label>
       <Button
         type="secondary"
         title={selectedOption?.title || defaultValue}
-        className="dropdown__button"
+        className={s.button}
         onClick={onToggleDropdown}
         icon={Icons.ARROW_BOTTOM}
       />
       {isDropdown && (
-        <ul className="dropdown__options" ref={refContainer}>
+        <ul className={s.options} ref={refContainer}>
           {options.map(({ title, value }) => (
-            <li
-              key={value}
-              className="dropdown__option"
-              onClick={onSelect(value)}
-              role="presentation"
-            >
+            <li key={value} onClick={onSelect(value)} role="presentation">
               <SearchLink
                 params={{ [paramsName]: value }}
-                className={cn('dropdown__link', {
-                  'is-active': searchField ? searchField === value : !value,
+                className={cn(s.link, {
+                  [s.isActive]: searchField ? searchField === value : !value,
                 })}
               >
                 {title}

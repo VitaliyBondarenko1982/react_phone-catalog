@@ -1,0 +1,13 @@
+.container {
+  font-family: var(--mont-bold);
+  font-weight: 700;
+}
+
+.container {
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--c-primary);
+  letter-spacing: -0.32px;
+}
+
+/*# sourceMappingURL=Heading.module.css.map */

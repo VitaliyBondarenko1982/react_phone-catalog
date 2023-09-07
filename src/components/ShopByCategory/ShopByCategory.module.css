@@ -1,0 +1,49 @@
+.amount {
+  font-family: var(--mont-medium);
+  font-weight: 500;
+}
+
+.category {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+}
+
+.item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.link {
+  display: flex;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+}
+.link:hover {
+  transform: scale(1.03);
+}
+
+.category {
+  display: flex;
+  color: var(--c-primary);
+  font-size: 20px;
+  line-height: 26px;
+  transition: color 0.3s ease;
+}
+.category:hover {
+  color: var(--c-secondary);
+}
+
+.amount {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--c-secondary);
+}
+
+/*# sourceMappingURL=ShopByCategory.module.css.map */

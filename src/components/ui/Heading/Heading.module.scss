@@ -1,0 +1,9 @@
+@import '../../../styles/extends.scss';
+
+.container {
+  @extend %font-bold;
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--c-primary);
+  letter-spacing: -0.32px;
+}

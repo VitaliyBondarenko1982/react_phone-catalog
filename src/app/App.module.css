@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Mont';
+  src: url(./fonts/Montserrat-Regular.ttf) format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mont Medium';
+  font-weight: 500;
+  src: url(./fonts/Montserrat-Medium.ttf) format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mont SemiBold';
+  font-weight: 600;
+  src: url(./fonts/Montserrat-SemiBold.ttf) format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mont Bold';
+  font-weight: 700;
+  src: url(./fonts/Montserrat-Bold.ttf) format('truetype');
+  font-style: normal;
+}
+:root {
+  --c-primary: #313237;
+  --c-icons-primary: #333;
+  --c-secondary: #89939a;
+  --c-icons-secondary: #b4bdc4;
+  --c-elements: #e2e6e9;
+  --c-hover_BG: #fafbfc;
+  --c-white: #fff;
+  --c-green: #27ae60;
+  --c-red: #eb5757;
+  --header-height: 64px;
+  --mont-regular: 'Mont', sans-serif;
+  --mont-medium: 'Mont Medium', sans-serif;
+  --mont-semibold: 'Mont SemiBold', sans-serif;
+  --mont-bold: 'Mont Bold', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--mont-regular);
+}
+
+body {
+  margin: 0;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+iframe {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page {
+  flex-grow: 1;
+  width: 1136px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+/*# sourceMappingURL=App.module.css.map */

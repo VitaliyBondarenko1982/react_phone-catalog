@@ -1,0 +1,43 @@
+@import '../../styles/extends.scss';
+
+.title {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+}
+
+.item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.link {
+  display: flex;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.category {
+  @extend %font-semibold;
+  display: flex;
+  color: var(--c-primary);
+  font-size: 20px;
+  line-height: 26px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--c-secondary);
+  }
+}
+
+.amount {
+  @extend %font-medium;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--c-secondary);
+}

@@ -1,0 +1,72 @@
+.__app-MainSlider-container {
+  --track-height: 400px;
+
+  & .slick-track {
+    height: var(--track-height);
+  }
+
+  .slick-arrow {
+    width: 32px !important;
+    height: var(--track-height) !important;
+    border: 1px solid var(--c-icons-secondary) !important;
+    transition: 0.3s;
+    background-color: #fff;
+
+    &:before {
+      content: unset;
+    }
+
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+
+    &:hover {
+      border: 1px solid var(--c-primary);
+    }
+
+    &.slick-prev {
+      left: 0;
+      z-index: 1;
+    }
+
+    &.slick-next {
+      right: 0;
+    }
+  }
+
+  .slick-dots {
+    bottom: -20px;
+
+    & li {
+      width: 14px;
+      height: 4px;
+
+      & button {
+        width: 100%;
+        height: 100%;
+
+        &:before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: var(--c-elements);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 1;
+          transition: 1s ease;
+        }
+
+        &:hover:before,
+        &:focus:before {
+          opacity: 0.8;
+          background-color: var(--c-primary);
+        }
+      }
+
+      &.slick-active button:before {
+        background-color: var(--c-primary);
+      }
+    }
+  }
+}
