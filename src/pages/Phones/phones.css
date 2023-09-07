@@ -1,0 +1,23 @@
+.phones__title {
+  margin-bottom: 8px;
+}
+.phones__amount {
+  font-family: var(--mont-medium);
+  margin-bottom: 40px;
+  color: var(--c-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+.phones__filters {
+  margin-bottom: 24px;
+}
+.phones__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 16px;
+}
+.phones__pagination {
+  margin-top: 40px;
+}
+
+/*# sourceMappingURL=phones.css.map */

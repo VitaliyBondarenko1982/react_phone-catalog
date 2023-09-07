@@ -4,8 +4,7 @@ describe('Home page', () => {
   beforeEach(() => {
     cy.visit('/');
 
-    cy.fixture('phones.json')
-      .as('phones');
+    cy.fixture('phones.json').as('phones');
   });
 
   it('should have "Hot prices" block implemented', () => {
@@ -17,13 +16,12 @@ describe('Home page', () => {
   });
 
   it('should have "Shop by category" block implemented', () => {
-    cy.getByDataCy('categoryLinksContainer')
-      .within(() => {
-        cy.get('[href="#/phones"]');
+    cy.getByDataCy('categoryLinksContainer').within(() => {
+      cy.get('[href="#/phones"]');
 
-        cy.get('[href="#/tablets"]');
+      cy.get('[href="#/tablets"]');
 
-        cy.get('[href="#/accessories"]');
-      })
+      cy.get('[href="#/accessories"]');
+    });
   });
 });

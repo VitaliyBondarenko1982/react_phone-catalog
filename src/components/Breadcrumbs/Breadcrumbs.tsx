@@ -9,11 +9,10 @@ import './breadcrumbs.scss';
 
 const Breadcrumbs = () => {
   const { pathname } = useLocation();
-  const crumbs = pathname.split('/').filter(c => !!c);
-  const excludeBreadcrumbs = useCheckOnRoute(
-    EXCLUDE_BREADCRUMBS_ROUTES,
-    { exact: true },
-  );
+  const crumbs = pathname.split('/').filter((c) => !!c);
+  const excludeBreadcrumbs = useCheckOnRoute(EXCLUDE_BREADCRUMBS_ROUTES, {
+    exact: true,
+  });
 
   if (excludeBreadcrumbs) {
     return null;
@@ -31,10 +30,7 @@ const Breadcrumbs = () => {
 
         if (index === crumbs.length - 1) {
           return (
-            <span
-              key={crumb}
-              className="breadcrumbs__item"
-            >
+            <span key={crumb} className="breadcrumbs__item">
               {title}
             </span>
           );

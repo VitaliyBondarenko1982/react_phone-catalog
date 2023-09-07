@@ -32,20 +32,26 @@
     "eslint": "^7.32.0",
     "eslint-plugin-cypress": "^2.11.2",
     "gh-pages": "^3.2.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^7.3.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^6.2.0",
     "node-sass": "^6.0.1",
+    "prettier": "^2.8.8",
     "stylelint": "^13.13.1",
     "typescript": "^4.6.3"
   },
   "scripts": {
+    "prepare": "husky install",
+    "prettier": "prettier --write . --ignore-path .gitignore",
     "start": "mate-scripts start -l",
     "build": "mate-scripts build",
     "test": "mate-scripts test",
     "lint-js": "mate-scripts lint -j",
     "lint-css": "mate-scripts lint -s",
     "lint": "npm run lint-js && npm run lint-css",
+    "format": "npm run prettier && npm run lint",
     "update": "mate-scripts update",
     "postinstall": "npm run update && cypress verify",
     "predeploy": "npm run build",
@@ -70,5 +76,8 @@
       "_comment": "Add `cypressComponents: true` to enable component tests",
       "cypress": true
     }
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": "npm run lint"
   }
 }

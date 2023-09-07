@@ -13,24 +13,15 @@ interface Props {
 }
 const PhoneCard: FC<Props> = ({ phone }) => {
   const {
-    phoneId,
-    image,
-    name,
-    price,
-    fullPrice,
-    screen,
-    capacity,
-    ram,
-  } = phone;
+    phoneId, image, name, price, fullPrice, screen, capacity, ram,
+  }
+    = phone;
 
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;
 
   return (
     <div className="phone-card" data-cy="cardsContainer">
-      <Link
-        to={phoneDetailsPath}
-        className="phone-card__link"
-      >
+      <Link to={phoneDetailsPath} className="phone-card__link">
         <img className="phone-card__image" src={image} alt={name} />
       </Link>
       <Link to={phoneDetailsPath} className="phone-card__name">
@@ -46,9 +37,7 @@ const PhoneCard: FC<Props> = ({ phone }) => {
           <span className="phone-card__details-value">{screen}</span>
         </li>
         <li className="phone-card__details-item">
-          <span className="phone-card__details-title">
-            Capacity
-          </span>
+          <span className="phone-card__details-title">Capacity</span>
           <span className="phone-card__details-value">
             {normalizeProductValue(capacity)}
           </span>

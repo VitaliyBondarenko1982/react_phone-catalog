@@ -1,0 +1,38 @@
+.products-slider__title {
+  margin-bottom: 24px;
+}
+.products-slider .slick-slide .phone-card {
+  margin: 0 6px;
+}
+.products-slider .slick-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -60px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--c-icons-secondary);
+  transition: 0.3s ease;
+  background-color: #fff;
+}
+.products-slider .slick-arrow:before {
+  content: unset;
+}
+@media (max-width: 500px) {
+  .products-slider .slick-arrow {
+    display: none !important;
+  }
+}
+.products-slider .slick-arrow:hover {
+  border-color: var(--c-primary);
+}
+.products-slider .slick-arrow.slick-prev {
+  left: unset;
+  right: 54px;
+  z-index: 1;
+}
+.products-slider .slick-arrow.slick-next {
+  right: 6px;
+}
+
+/*# sourceMappingURL=pruductsSlider.css.map */

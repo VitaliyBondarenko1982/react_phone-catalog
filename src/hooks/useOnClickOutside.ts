@@ -7,39 +7,33 @@ interface Input {
 }
 
 function useOnClickOutside({ refs, handler, isOpen }: Input): void {
-  useEffect(
-    () => {
-      if (!isOpen) {
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const listener = (event: MouseEvent | TouchEvent) => {
+      const { target } = event;
+
+      if (
+        target instanceof Node
+        && refs.some(({ current }) => current && current.contains(target))
+      ) {
         return;
       }
 
-      const listener = (event: MouseEvent | TouchEvent) => {
-        const { target } = event;
+      handler(event);
+    };
 
-        if (
-          target instanceof Node
-          && refs.some(
-            ({ current }) => current && current.contains(target),
-          )
-        ) {
-          return;
-        }
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
 
-        handler(event);
-      };
-
-      document.addEventListener('mousedown', listener);
-      document.addEventListener('touchstart', listener);
-
-      // eslint-disable-next-line consistent-return
-      return () => {
-        document.removeEventListener('mousedown', listener);
-        document.removeEventListener('touchstart', listener);
-      };
-    },
-
-    [refs, handler, isOpen],
-  );
+    // eslint-disable-next-line consistent-return
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [refs, handler, isOpen]);
 }
 
 export default useOnClickOutside;

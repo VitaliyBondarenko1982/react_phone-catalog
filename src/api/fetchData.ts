@@ -13,17 +13,13 @@ const request = <T>(url: string): Promise<T> => {
   });
 };
 
-export const getPhones = (
-  setData: React.Dispatch<SetStateAction<Phone[]>>,
-) => {
-  request<Phone[]>('/products.json')
-    .then(products => setData(products));
+export const getPhones = (setData: React.Dispatch<SetStateAction<Phone[]>>) => {
+  request<Phone[]>('/products.json').then((products) => setData(products));
 };
 
 export const getPhoneDetails = (
   id: string,
   setData: React.Dispatch<SetStateAction<Phone>>,
 ) => {
-  request<Phone>(`/products/${id}.json`)
-    .then(product => setData(product));
+  request<Phone>(`/products/${id}.json`).then((product) => setData(product));
 };

@@ -21,11 +21,11 @@ const Phones = () => {
     }
 
     const start = perPage * (page - 1);
-    const end = page * perPage <= phones.length
-      ? page * perPage : phones.length;
+    const end
+      = page * perPage <= phones.length ? page * perPage : phones.length;
 
     return phones.slice(start, end);
-  }, [page, perPage]);
+  }, [page, perPage, phones]);
 
   useEffect(() => {
     getPhones(setPhones);
@@ -33,17 +33,13 @@ const Phones = () => {
 
   return (
     <div className="phones">
-      <Heading
-        tag="h1"
-        title="Mobile phones"
-        className="phones__title"
-      />
+      <Heading tag="h1" title="Mobile phones" className="phones__title" />
       <p className="phones__amount">{`${phones.length} models`}</p>
       <div className="phones__filters">
         <Filters />
       </div>
       <div className="phones__list">
-        {visiblePhones.map(phone => (
+        {visiblePhones.map((phone) => (
           <PhoneCard phone={phone} />
         ))}
       </div>

@@ -3,7 +3,7 @@ import { AppRoutes } from '../constants';
 
 type Routes = AppRoutes[] | AppRoutes;
 type Options = {
-  exact?: boolean,
+  exact?: boolean;
 };
 
 const useCheckOnRoute = (routes: Routes, options: Options = {}): boolean => {
@@ -11,9 +11,9 @@ const useCheckOnRoute = (routes: Routes, options: Options = {}): boolean => {
   const { exact } = options;
 
   if (Array.isArray(routes)) {
-    return routes.some((route) => (exact
-      ? route === pathname
-      : pathname.includes(route)));
+    return routes.some((route) => {
+      return exact ? route === pathname : pathname.includes(route);
+    });
   }
 
   return exact ? routes === pathname : pathname.includes(routes);

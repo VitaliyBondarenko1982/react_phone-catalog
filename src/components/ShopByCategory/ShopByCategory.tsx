@@ -30,7 +30,9 @@ const ShopByCategory: FC<Props> = ({ amount }) => {
               {category}
             </Link>
 
-            <p className="shop-by-category__amount">{`${amount[id] || 0} models`}</p>
+            <p className="shop-by-category__amount">
+              {`${amount[id] || 0} models`}
+            </p>
           </li>
         ))}
       </ul>

@@ -26,10 +26,7 @@ const Root = () => {
         <Route path={AppRoutes.CART} element={<Cart />} />
         <Route path={AppRoutes.FAVORITES} element={<Favorites />} />
         <Route />
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

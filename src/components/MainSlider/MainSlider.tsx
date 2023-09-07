@@ -35,28 +35,16 @@ const MainSlider = () => {
       ref={slider}
       {...MAIN_SLIDER_SETTINGS}
       className="slider"
-      prevArrow={(
-        <SliderArrow
-          onClick={noop}
-          icon={Icons.ARROW_LEFT}
-          className=""
-        />
-      )}
-      nextArrow={(
-        <SliderArrow
-          onClick={noop}
-          icon={Icons.ARROW_RIGHT}
-          className=""
-        />
-      )}
+      prevArrow={
+        <SliderArrow onClick={noop} icon={Icons.ARROW_LEFT} className="" />
+      }
+      nextArrow={
+        <SliderArrow onClick={noop} icon={Icons.ARROW_RIGHT} className="" />
+      }
     >
-      {MAIN_SLIDER_IMAGES.map(image => (
+      {MAIN_SLIDER_IMAGES.map((image) => (
         <div className="slider__item">
-          <img
-            className="slider__image"
-            src={image}
-            alt={image}
-          />
+          <img className="slider__image" src={image} alt={image} />
         </div>
       ))}
     </Slider>

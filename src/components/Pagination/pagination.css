@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination__list {
+  display: flex;
+}
+.pagination__item:not(:last-child) {
+  margin-right: 8px;
+}
+.pagination__button {
+  padding: 5px 7px;
+  width: 32px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/*# sourceMappingURL=pagination.css.map */

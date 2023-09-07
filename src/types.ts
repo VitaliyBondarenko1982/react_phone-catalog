@@ -41,16 +41,16 @@ export interface PhoneDetails {
 }
 
 export interface CategoryAmount {
-  [ProductCategories.PHONES]: number,
-  [ProductCategories.TABLETS]?: number,
-  [ProductCategories.ACCESSORIES]?: number,
+  [ProductCategories.PHONES]: number;
+  [ProductCategories.TABLETS]?: number;
+  [ProductCategories.ACCESSORIES]?: number;
 }
 
 export interface DropdownOption {
-  title: string,
-  value: DropdownValue,
+  title: string;
+  value: DropdownValue;
 }
 
 export type SearchParams = {
-  [key: string]: DropdownValue | DropdownValue[] | string | string[] | null,
+  [key: string]: DropdownValue | DropdownValue[] | string | string[] | null;
 };

@@ -28,7 +28,7 @@ const Dropdown: FC<Props> = ({
   const searchField = searchParams.get(paramsName);
   const page = searchParams.get(ParamsNames.PAGE);
 
-  const onToggleDropdown = () => setIsDropdown(prev => !prev);
+  const onToggleDropdown = () => setIsDropdown((prev) => !prev);
 
   const onCloseDropdown = () => setIsDropdown(false);
 
@@ -43,8 +43,8 @@ const Dropdown: FC<Props> = ({
 
     setSearchWith({
       [paramsName]: optionValue || null,
-      [ParamsNames.PAGE]: paramsName === ParamsNames.PER_PAGE
-        ? pageValue : page,
+      [ParamsNames.PAGE]:
+        paramsName === ParamsNames.PER_PAGE ? pageValue : page,
     });
 
     setIsDropdown(false);
@@ -52,7 +52,7 @@ const Dropdown: FC<Props> = ({
 
   useOnClickOutside({ refs, handler: onCloseDropdown, isOpen: isDropdown });
 
-  const selectedOption = options.find(option => option.value === searchField);
+  const selectedOption = options.find((option) => option.value === searchField);
 
   return (
     <div className="dropdown">
@@ -76,9 +76,7 @@ const Dropdown: FC<Props> = ({
               <SearchLink
                 params={{ [paramsName]: value }}
                 className={cn('dropdown__link', {
-                  'is-active': searchField
-                    ? searchField === value
-                    : !value,
+                  'is-active': searchField ? searchField === value : !value,
                 })}
               >
                 {title}

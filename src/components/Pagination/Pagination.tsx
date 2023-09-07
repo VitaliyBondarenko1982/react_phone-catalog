@@ -24,7 +24,9 @@ const Pagination: FC<Props> = ({ itemsLength, currentPage, perPage }) => {
         <li className="pagination__item">
           <SearchLink
             params={{
-              [ParamsNames.PAGE]: isFirstPage ? `${currentPage}` : `${currentPage - 1}`,
+              [ParamsNames.PAGE]: isFirstPage
+                ? `${currentPage}`
+                : `${currentPage - 1}`,
             }}
             className={cn('pagination__link', {
               'is-disabled': isFirstPage,
@@ -56,7 +58,9 @@ const Pagination: FC<Props> = ({ itemsLength, currentPage, perPage }) => {
         <li className="pagination__item">
           <SearchLink
             params={{
-              [ParamsNames.PAGE]: isLastPage ? `${currentPage}` : `${currentPage + 1}`,
+              [ParamsNames.PAGE]: isLastPage
+                ? `${currentPage}`
+                : `${currentPage + 1}`,
             }}
             className={cn('pagination__link', {
               'is-disabled': isLastPage,

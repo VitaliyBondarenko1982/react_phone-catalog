@@ -13,11 +13,9 @@ const NavBar = () => {
           <li className="navbar__main-item">
             <NavLink
               to={to}
-              className={
-                ({ isActive }) => cn('navbar__main-link', {
-                  'is-active': isActive,
-                })
-              }
+              className={({ isActive }) => cn('navbar__main-link', {
+                'is-active': isActive,
+              })}
             >
               {title}
             </NavLink>
@@ -29,11 +27,9 @@ const NavBar = () => {
           <li className="navbar__side-item">
             <NavLink
               to={to}
-              className={
-                ({ isActive }) => cn('navbar__side-link', {
-                  'is-active': isActive,
-                })
-              }
+              className={({ isActive }) => cn('navbar__side-link', {
+                'is-active': isActive,
+              })}
             >
               <Icon iconId={icon} />
             </NavLink>

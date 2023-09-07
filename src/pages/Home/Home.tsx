@@ -20,16 +20,17 @@ const Home = () => {
   const hotPricePhones = useMemo(() => {
     return [...phones]
       .sort((a, b) => {
-        return (b.fullPrice - b.price)
-          - (a.fullPrice - a.price);
-      }).slice(0, 16);
+        return b.fullPrice - b.price - (a.fullPrice - a.price);
+      })
+      .slice(0, 16);
   }, [phones]);
 
   const newModelPhones = useMemo(() => {
     return [...phones]
       .sort((a, b) => {
         return b.year - a.year;
-      }).slice(0, 16);
+      })
+      .slice(0, 16);
   }, [phones]);
 
   return (
@@ -39,9 +40,7 @@ const Home = () => {
         <ProductsSlider products={hotPricePhones} title="Hot prices" />
       </div>
       <div className="home__section">
-        <ShopByCategory
-          amount={categoryAmount}
-        />
+        <ShopByCategory amount={categoryAmount} />
       </div>
       <div className="home__section">
         <ProductsSlider products={newModelPhones} title="Brand new models" />

@@ -12,11 +12,7 @@ interface Props {
 const Heading: FC<Props> = ({ title, tag, className }) => {
   const Tag = tag || 'h2';
 
-  return (
-    <Tag className={cn('heading', className)}>
-      {title}
-    </Tag>
-  );
+  return <Tag className={cn('heading', className)}>{title}</Tag>;
 };
 
 export default Heading;

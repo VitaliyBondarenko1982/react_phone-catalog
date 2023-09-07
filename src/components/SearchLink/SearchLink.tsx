@@ -4,14 +4,10 @@ import { getSearchWith } from '../../utils';
 import { SearchParams } from '../../types';
 
 type Props = Omit<LinkProps, 'to'> & {
-  params: SearchParams,
+  params: SearchParams;
 };
 
-const SearchLink: FC<Props> = ({
-  children,
-  params,
-  ...props
-}) => {
+const SearchLink: FC<Props> = ({ children, params, ...props }) => {
   const [searchParams] = useSearchParams();
 
   return (

@@ -19,22 +19,14 @@ const ProductsSlider: FC<Props> = ({ products, title }) => {
       <Heading title={title} className="products-slider__title" />
       <Slider
         {...PRODUCTS_SLIDER_SETTINGS}
-        prevArrow={(
-          <SliderArrow
-            onClick={noop}
-            icon={Icons.ARROW_LEFT}
-            className=""
-          />
-        )}
-        nextArrow={(
-          <SliderArrow
-            onClick={noop}
-            icon={Icons.ARROW_RIGHT}
-            className=""
-          />
-        )}
+        prevArrow={
+          <SliderArrow onClick={noop} icon={Icons.ARROW_LEFT} className="" />
+        }
+        nextArrow={
+          <SliderArrow onClick={noop} icon={Icons.ARROW_RIGHT} className="" />
+        }
       >
-        {products.map(phone => (
+        {products.map((phone) => (
           <PhoneCard phone={phone} />
         ))}
       </Slider>
