@@ -1,9 +1,9 @@
-import Dropdown from '../Dropdown';
 import {
   PAGINATION_OPTIONS,
-  SORT_BY_OPTIONS,
   ParamsNames,
+  SORT_BY_OPTIONS,
 } from '../../constants';
+import Dropdown from '../Dropdown';
 
 import s from './Filters.module.scss';
 

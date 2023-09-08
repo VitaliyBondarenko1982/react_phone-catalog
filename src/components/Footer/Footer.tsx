@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+
+import { Icons } from '../../constants';
 import Logo from '../Logo';
 import { Button } from '../ui';
-import { Icons } from '../../constants';
 
 import s from './Footer.module.scss';
 

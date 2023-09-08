@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import Button from '../Button';
+
 import { Icons } from '../../../constants';
+import Button from '../Button';
 
 interface Props {
   onClick: VoidFunction;

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Heading } from '../ui';
 import { BY_CATEGORY_ITEMS } from '../../constants';
 import { CategoryAmount } from '../../types';
+import { Heading } from '../ui';
 
 import s from './ShopByCategory.module.scss';
 

@@ -1,10 +1,10 @@
+export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as Filters } from './Filters';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as MainSlider } from './MainSlider';
+export { default as Pagination } from './Pagination';
 export { default as PhoneCard } from './PhoneCard';
 export { default as ProductsSlider } from './ProductsSlider';
 export { default as ShopByCategory } from './ShopByCategory';
 export { Heading } from './ui';
-export { default as Breadcrumbs } from './Breadcrumbs';
-export { default as Filters } from './Filters';
-export { default as Pagination } from './Pagination';

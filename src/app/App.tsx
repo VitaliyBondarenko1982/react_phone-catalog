@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
+
 import { Footer, Header } from '../components';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 import s from './App.module.scss';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 const App = () => (
   <div className={s.container}>

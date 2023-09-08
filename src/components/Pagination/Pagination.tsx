@@ -1,9 +1,11 @@
 import { FC } from 'react';
+
+import { Icons, ParamsNames } from '../../constants';
 import { getNumbers } from '../../utils';
 import SearchLink from '../SearchLink';
-import { Icons, ParamsNames } from '../../constants';
-import s from './Pagination.module.scss';
 import { Button } from '../ui';
+
+import s from './Pagination.module.scss';
 
 interface Props {
   itemsLength: number;

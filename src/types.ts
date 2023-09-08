@@ -1,4 +1,4 @@
-import { ProductCategories, DropdownValue } from './constants';
+import { DropdownValue, ProductCategories } from './constants';
 
 export interface Phone {
   id: string;

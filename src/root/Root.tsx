@@ -1,16 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
 import App from '../app';
+import { AppRoutes } from '../constants';
 import {
   Accessories,
   Cart,
   Favorites,
   Home,
   NotFound,
-  Phones,
   PhoneDetails,
+  Phones,
   Tablets,
 } from '../pages';
-import { AppRoutes } from '../constants';
 
 const Root = () => {
   return (

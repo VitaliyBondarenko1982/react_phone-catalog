@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
+import { Icons } from '../../../constants';
 import { noop } from '../../../utils';
 import Icon from '../Icon';
-import { Icons } from '../../../constants';
+
 import s from './Button.module.scss';
 
 interface Props {

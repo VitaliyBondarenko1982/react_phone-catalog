@@ -2,11 +2,11 @@ import { FC } from 'react';
 import Slider from 'react-slick';
 import cn from 'classnames';
 
-import { Phone } from '../../types';
-import PhoneCard from '../PhoneCard';
 import { Icons, PRODUCTS_SLIDER_SETTINGS } from '../../constants';
-import { Heading, SliderArrow } from '../ui';
+import { Phone } from '../../types';
 import { noop } from '../../utils';
+import PhoneCard from '../PhoneCard';
+import { Heading, SliderArrow } from '../ui';
 
 import './slickSlider.scss';
 import s from './ProductsSlider.module.scss';

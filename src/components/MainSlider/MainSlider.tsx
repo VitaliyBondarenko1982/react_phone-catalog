@@ -8,10 +8,9 @@ import {
   MAIN_SLIDER_SETTINGS,
 } from '../../constants';
 import { noop } from '../../utils';
-
 import { SliderArrow } from '../ui';
-import 'slick-carousel/slick/slick.scss';
 
+import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
 import './slickSlider.scss';
 import s from './MainSlider.module.scss';

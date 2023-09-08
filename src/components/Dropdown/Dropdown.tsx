@@ -3,12 +3,13 @@ import {
 } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import cn from 'classnames';
-import { Button } from '../ui';
+
 import { DropdownValue, Icons, ParamsNames } from '../../constants';
-import { DropdownOption, SearchParams } from '../../types';
 import { useOnClickOutside } from '../../hooks';
-import SearchLink from '../SearchLink';
+import { DropdownOption, SearchParams } from '../../types';
 import { getSearchWith } from '../../utils';
+import SearchLink from '../SearchLink';
+import { Button } from '../ui';
 
 import s from './Dropdown.module.scss';
 

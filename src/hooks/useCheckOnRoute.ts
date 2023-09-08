@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+
 import { AppRoutes } from '../constants';
 
 type Routes = AppRoutes[] | AppRoutes;

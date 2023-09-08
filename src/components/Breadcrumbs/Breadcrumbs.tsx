@@ -1,9 +1,9 @@
+import { Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { Fragment } from 'react';
 import { AppRoutes, EXCLUDE_BREADCRUMBS_ROUTES, Icons } from '../../constants';
-import { Icon } from '../ui';
 import { useCheckOnRoute } from '../../hooks';
+import { Icon } from '../ui';
 
 import s from './Breadcrumbs.module.scss';
 

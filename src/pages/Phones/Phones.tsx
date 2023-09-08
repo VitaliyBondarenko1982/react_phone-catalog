@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Filters, Heading, Pagination } from '../../components';
-import { Phone } from '../../types';
+
 import { getPhones } from '../../api';
+import { Filters, Heading, Pagination } from '../../components';
 import PhoneCard from '../../components/PhoneCard';
 import { ParamsNames } from '../../constants';
+import { Phone } from '../../types';
 
 import s from './Phones.module.scss';
 

@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import { Phone } from '../../types';
 import { AppRoutes, Icons } from '../../constants';
+import { Phone } from '../../types';
 import { noop, normalizeProductValue } from '../../utils';
 import { Button } from '../ui';
 

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+
 import { AppRoutes, Icons } from '../../constants';
 import { Icon } from '../ui';
 

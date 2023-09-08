@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { MainSlider, ProductsSlider, ShopByCategory } from '../../components';
-import { Phone } from '../../types';
+
 import { getPhones } from '../../api';
+import { MainSlider, ProductsSlider, ShopByCategory } from '../../components';
 import { ProductCategories } from '../../constants';
+import { Phone } from '../../types';
 
 import s from './Home.module.scss';
 
