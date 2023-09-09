@@ -53,7 +53,7 @@
     "prettier": "prettier --write . --ignore-path .gitignore",
     "start": "mate-scripts start -l",
     "dev": " concurrently \"npm start\" \"npm run gen:scss-types\"",
-    "build": "npm run build",
+    "build": "mate-scripts build",
     "test": "mate-scripts test",
     "lint-js": "mate-scripts lint -j",
     "lint-css": "mate-scripts lint -s",
@@ -62,7 +62,7 @@
     "update": "mate-scripts update",
     "postinstall": "npm run update && cypress verify",
     "predeploy": "npm run build",
-    "deploy": "npm run build && npx gh-pages -d ./dist",
+    "deploy": "mate-scripts deploy",
     "gen:scss-types": "npx typed-scss-modules src -w"
   },
   "browserslist": {
