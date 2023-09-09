@@ -19,6 +19,7 @@ module.exports = {
       },
     ],
     'react/require-default-props': 0,
+    'object-curly-newline': 'off',
     'simple-import-sort/imports': [
       'error',
       {

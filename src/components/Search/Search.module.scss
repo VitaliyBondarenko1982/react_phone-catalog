@@ -1,0 +1,40 @@
+@import "../../styles/extends.scss";
+.container {
+  border-left: 1px solid var(--c-elements);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+  width: 324px;
+}
+
+.icon {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border: none;
+  outline: none;
+  @extend %font-semibold;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--c-primary);
+
+  &::placeholder {
+    @extend %font-semibold;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--c-icons-secondary);
+  }
+}

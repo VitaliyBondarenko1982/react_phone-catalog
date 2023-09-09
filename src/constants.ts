@@ -81,6 +81,11 @@ export const BY_CATEGORY_ITEMS = [
 ];
 
 export const EXCLUDE_BREADCRUMBS_ROUTES = [AppRoutes.CART, AppRoutes.HOME];
+export const ENABLE_SEARCH_ROUTES = [
+  AppRoutes.PHONES,
+  AppRoutes.TABLETS,
+  AppRoutes.ACCESSORIES,
+];
 
 export const MAIN_SLIDER_SETTINGS = {
   dots: true,

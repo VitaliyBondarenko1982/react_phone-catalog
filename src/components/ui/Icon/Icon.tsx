@@ -9,7 +9,7 @@ interface Props {
 }
 const Icon: FC<Props> = ({ iconId, className }) => {
   return (
-    <svg className={cn(s.container, className, '__app-Icon-container')}>
+    <svg className={cn(s.container, className)}>
       <use href={`img/sprite.svg#${iconId}`} />
     </svg>
   );

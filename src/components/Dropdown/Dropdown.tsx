@@ -1,12 +1,10 @@
-import {
-  FC, useMemo, useRef, useState,
-} from 'react';
+import { FC, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import cn from 'classnames';
 
 import { DropdownValue, Icons, ParamsNames } from '../../constants';
 import { useOnClickOutside } from '../../hooks';
-import { DropdownOption, SearchParams } from '../../types';
+import { DropdownOption } from '../../types';
 import { getSearchWith } from '../../utils';
 import SearchLink from '../SearchLink';
 import { Button } from '../ui';
@@ -20,9 +18,7 @@ interface Props {
   paramsName: ParamsNames;
 }
 
-const Dropdown: FC<Props> = ({
-  label, options, defaultValue, paramsName,
-}) => {
+const Dropdown: FC<Props> = ({ label, options, defaultValue, paramsName }) => {
   const [isDropdown, setIsDropdown] = useState(false);
   const refContainer = useRef<HTMLUListElement>(null);
   const refs = useMemo(() => [refContainer], []);
@@ -34,20 +30,16 @@ const Dropdown: FC<Props> = ({
 
   const onCloseDropdown = () => setIsDropdown(false);
 
-  function setSearchWith(params: SearchParams) {
-    const search = getSearchWith(searchParams, params);
-
-    setSearchParams(search);
-  }
-
   const onSelect = (optionValue: DropdownValue) => () => {
     const pageValue = optionValue ? '1' : null;
 
-    setSearchWith({
-      [paramsName]: optionValue || null,
-      [ParamsNames.PAGE]:
-        paramsName === ParamsNames.PER_PAGE ? pageValue : page,
-    });
+    setSearchParams(
+      getSearchWith(searchParams, {
+        [paramsName]: optionValue || null,
+        [ParamsNames.PAGE]:
+          paramsName === ParamsNames.PER_PAGE ? pageValue : page,
+      }),
+    );
 
     setIsDropdown(false);
   };

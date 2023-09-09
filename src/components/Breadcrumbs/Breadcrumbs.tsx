@@ -10,9 +10,7 @@ import s from './Breadcrumbs.module.scss';
 const Breadcrumbs = () => {
   const { pathname } = useLocation();
   const crumbs = pathname.split('/').filter((c) => !!c);
-  const excludeBreadcrumbs = useCheckOnRoute(EXCLUDE_BREADCRUMBS_ROUTES, {
-    exact: true,
-  });
+  const excludeBreadcrumbs = useCheckOnRoute(EXCLUDE_BREADCRUMBS_ROUTES);
 
   if (excludeBreadcrumbs) {
     return null;

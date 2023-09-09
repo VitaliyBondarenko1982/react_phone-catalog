@@ -7,7 +7,10 @@ type Options = {
   exact?: boolean;
 };
 
-const useCheckOnRoute = (routes: Routes, options: Options = {}): boolean => {
+const useCheckOnRoute = (
+  routes: Routes,
+  options: Options = { exact: true },
+): boolean => {
   const { pathname } = useLocation();
   const { exact } = options;
 

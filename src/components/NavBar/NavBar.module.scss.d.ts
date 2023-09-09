@@ -6,3 +6,4 @@ export declare const mainList: string;
 export declare const sideItem: string;
 export declare const sideLink: string;
 export declare const sideList: string;
+export declare const sideWrapper: string;

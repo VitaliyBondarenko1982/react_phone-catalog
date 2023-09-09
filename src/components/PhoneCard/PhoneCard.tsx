@@ -13,9 +13,7 @@ interface Props {
   phone: Phone;
 }
 const PhoneCard: FC<Props> = ({ phone }) => {
-  const {
-    phoneId, image, name, price, fullPrice, screen, capacity, ram,
-  }
+  const { phoneId, image, name, price, fullPrice, screen, capacity, ram }
     = phone;
 
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;

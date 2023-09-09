@@ -11,7 +11,7 @@ interface Props {
   onClick?: VoidFunction;
   icon?: Icons;
   title?: string | number;
-  type?: 'primary' | 'secondary' | 'rounded';
+  type?: 'primary' | 'secondary' | 'rounded' | 'transparent';
   isDisabled?: boolean;
   className?: string;
 }
@@ -33,6 +33,7 @@ const Button: FC<Props> = ({
         [s.isSpaceBetween]: !!title && !!icon,
         [s.primary]: type === 'primary',
         [s.secondary]: type === 'secondary',
+        [s.transparent]: type === 'transparent',
       })}
     >
       {title}

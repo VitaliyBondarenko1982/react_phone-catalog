@@ -46,3 +46,14 @@
     border-color: var(--c-elements);
   }
 }
+
+.transparent {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.85
+  }
+}
