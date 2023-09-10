@@ -17,18 +17,22 @@ const Search = () => {
 
   const [query, setQuery] = useState(appliedQuery);
 
-  const handleQueryChange = (value: string) => {
-    setSearchParams(
-      getSearchWith(searchParams, {
-        [ParamsNames.QUERY]: value.trim() ? value : null,
-        [ParamsNames.PAGE]: page ? '1' : page,
-      }),
-    );
-  };
+  const handleQueryChange = useCallback(
+    (value: string) => {
+      setSearchParams(
+        getSearchWith(searchParams, {
+          [ParamsNames.QUERY]: value.trim() ? value : null,
+          [ParamsNames.PAGE]: page ? '1' : page,
+        }),
+      );
+    },
+    [page, searchParams, setSearchParams],
+  );
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleQueryChangeDebounced = useCallback(
     debounce(handleQueryChange, 1000),
-    [],
+    [handleQueryChange],
   );
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {

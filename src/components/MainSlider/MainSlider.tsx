@@ -29,7 +29,7 @@ const MainSlider = () => {
 
     // eslint-disable-next-line consistent-return
     return () => window.clearInterval(timerId);
-  }, [slider.current]);
+  }, []);
 
   return (
     <Slider

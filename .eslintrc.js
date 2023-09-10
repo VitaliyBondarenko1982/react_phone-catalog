@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
     '@mate-academy/eslint-config-react-typescript',
-    'plugin:cypress/recommended',
+    'plugin:react-hooks/recommended',
   ],
-  plugins: ['@typescript-eslint', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'react-hooks', 'simple-import-sort'],
   parser: '@typescript-eslint/parser',
   rules: {
     // React
@@ -17,6 +17,8 @@ module.exports = {
         assert: 'either',
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     // JavaScript
     semi: 0,
