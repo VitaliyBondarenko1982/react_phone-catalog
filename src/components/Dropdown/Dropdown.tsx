@@ -14,7 +14,7 @@ import s from './Dropdown.module.scss';
 interface Props {
   options: DropdownOption[];
   label: string;
-  defaultValue?: string;
+  defaultValue: string;
   paramsName: ParamsNames;
 }
 

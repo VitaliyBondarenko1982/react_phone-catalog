@@ -18,12 +18,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@cypress/webpack-dev-server": "^1.8.4",
-    "@mate-academy/cypress-tools": "^1.0.4",
-    "@mate-academy/eslint-config-react": "*",
     "@mate-academy/eslint-config-react-typescript": "*",
-    "@mate-academy/scripts": "^1.2.8",
-    "@mate-academy/students-ts-config": "*",
     "@mate-academy/stylelint-config": "*",
     "@types/lodash": "^4.14.198",
     "@types/node": "^17.0.23",
@@ -31,7 +26,6 @@
     "@types/react-dom": "^17.0.14",
     "@types/react-slick": "^0.23.10",
     "concurrently": "^8.2.1",
-    "cypress": "^9.5.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.11.2",
@@ -46,23 +40,22 @@
     "prettier": "^2.8.8",
     "stylelint": "^13.13.1",
     "typed-scss-modules": "^7.1.4",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "typescript-eslint-parser": "^22.0.0"
   },
   "scripts": {
     "prepare": "husky install",
     "prettier": "prettier --write . --ignore-path .gitignore",
-    "start": "mate-scripts start -l",
+    "start": "react-scripts start",
     "dev": " concurrently \"npm start\" \"npm run gen:scss-types\"",
-    "build": "mate-scripts build",
-    "test": "mate-scripts test",
-    "lint-js": "mate-scripts lint -j",
-    "lint-css": "mate-scripts lint -s",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint-js": "eslint --ext .ts,.tsx,.js,.jsx ./src --ignore-path .gitignore",
+    "lint-css": "npx stylelint \"src/**/*.scss\"",
     "lint": "npm run lint-js && npm run lint-css",
-    "format": "npm run prettier && npm run lint",
-    "update": "mate-scripts update",
-    "postinstall": "npm run update && cypress verify",
+    "format": "npm run prettier && npm run lint-js -- --fix && npm run lint-css -- --fix",
     "predeploy": "npm run build",
-    "deploy": "mate-scripts deploy",
+    "deploy": "gh-pages -d build",
     "gen:scss-types": "npx typed-scss-modules src -w"
   },
   "browserslist": {
@@ -76,14 +69,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "mateAcademy": {
-    "_comment": "Replace 'reactTypescript' with 'react' if you want use React without Typescript",
-    "projectType": "reactTypescript",
-    "tests": {
-      "_comment": "Add `cypressComponents: true` to enable component tests",
-      "cypress": true
-    }
   },
   "lint-staged": {
     "*.{ts, tsx}": "npm run lint"

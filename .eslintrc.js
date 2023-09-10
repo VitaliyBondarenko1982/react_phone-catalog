@@ -3,8 +3,26 @@ module.exports = {
     '@mate-academy/eslint-config-react-typescript',
     'plugin:cypress/recommended',
   ],
-  plugins: ['simple-import-sort'],
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
+  parser: '@typescript-eslint/parser',
   rules: {
+    // React
+    'react/prop-types': 0,
+    'react/self-closing-comp': 0,
+    'react/display-name': 0,
+    'react/require-default-props': 0,
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        assert: 'either',
+      },
+    ],
+
+    // JavaScript
+    semi: 0,
+    'no-proto': 0,
+    'no-unused-vars': 0,
+    'object-curly-newline': 'off',
     'max-len': [
       'error',
       {
@@ -12,14 +30,15 @@ module.exports = {
         ignoreComments: true,
       },
     ],
-    'jsx-a11y/label-has-associated-control': [
-      'error',
-      {
-        assert: 'either',
-      },
-    ],
-    'react/require-default-props': 0,
-    'object-curly-newline': 'off',
+
+    // TypeScript
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/ban-types': 0,
+    '@typescript-eslint/semi': ['error'],
+
+    // imports/exports
     'simple-import-sort/imports': [
       'error',
       {
