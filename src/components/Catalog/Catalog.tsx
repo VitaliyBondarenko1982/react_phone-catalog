@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { DropdownValue, ParamsNames } from '../../constants';
-import { Product } from '../../types';
+import { IProduct } from '../../types';
 import { checkMatchQuery } from '../../utils';
 import Filters from '../Filters';
 import Pagination from '../Pagination';
@@ -12,7 +12,7 @@ import Heading from '../ui/Heading';
 import s from './Catalog.module.scss';
 
 interface Props {
-  products: Product[];
+  products: IProduct[];
   title: string;
 }
 const Catalog: FC<Props> = ({ products, title }) => {

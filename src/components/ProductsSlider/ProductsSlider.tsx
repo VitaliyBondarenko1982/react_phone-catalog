@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import cn from 'classnames';
 
 import { Icons, PRODUCTS_SLIDER_SETTINGS } from '../../constants';
-import { Product } from '../../types';
+import { IProduct } from '../../types';
 import { noop } from '../../utils';
 import PhoneCard from '../PhoneCard';
 import { Heading, SliderArrow } from '../ui';
@@ -12,7 +12,7 @@ import './slickSlider.scss';
 import s from './ProductsSlider.module.scss';
 
 interface Props {
-  products: Product[];
+  products: IProduct[];
   title: string;
 }
 const ProductsSlider: FC<Props> = ({ products, title }) => {

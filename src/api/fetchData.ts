@@ -1,8 +1,9 @@
 import React, { SetStateAction } from 'react';
 
-import { Product } from '../types';
+import { IProduct, IProductDetails } from '../types';
 
-const BASE_URL = 'https://mate-academy.github.io/react_phone-catalog/_new';
+export const BASE_URL =
+  'https://vitaliybondarenko1982.github.io/react_phone-catalog/api/_new';
 
 const request = <T>(url: string): Promise<T> => {
   return fetch(BASE_URL + url).then((res) => {
@@ -15,14 +16,16 @@ const request = <T>(url: string): Promise<T> => {
 };
 
 export const getPhones = (
-  setData: React.Dispatch<SetStateAction<Product[]>>,
+  setData: React.Dispatch<SetStateAction<IProduct[]>>,
 ) => {
-  request<Product[]>('/products.json').then((products) => setData(products));
+  request<IProduct[]>('/products.json').then((products) => setData(products));
 };
 
 export const getPhoneDetails = (
-  id: string,
-  setData: React.Dispatch<SetStateAction<Product>>,
+  slug: string,
+  setData: React.Dispatch<SetStateAction<IProductDetails | null>>,
 ) => {
-  request<Product>(`/products/${id}.json`).then((product) => setData(product));
+  request<IProductDetails>(`/products/${slug}.json`).then((product) =>
+    setData(product),
+  );
 };
