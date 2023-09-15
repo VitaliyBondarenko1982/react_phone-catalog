@@ -7,4 +7,3 @@ export { default as PhoneCard } from './PhoneCard';
 export { default as ProductDetails } from './ProductDetails';
 export { default as ProductsSlider } from './ProductsSlider';
 export { default as ShopByCategory } from './ShopByCategory';
-export { Heading } from './ui';
