@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     '@mate-academy/eslint-config-react-typescript',
     'plugin:react-hooks/recommended',
+    'prettier',
   ],
   plugins: ['@typescript-eslint', 'react-hooks', 'simple-import-sort'],
   parser: '@typescript-eslint/parser',

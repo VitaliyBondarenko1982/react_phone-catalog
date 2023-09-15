@@ -1,4 +1,5 @@
 export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as Catalog } from './Catalog';
 export { default as Filters } from './Filters';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';

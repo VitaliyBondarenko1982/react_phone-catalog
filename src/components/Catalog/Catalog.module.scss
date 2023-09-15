@@ -1,13 +1,11 @@
-.amount {
-  font-family: var(--mont-medium);
-  font-weight: 500;
-}
+@import '../../styles/extends';
 
 .title {
   margin-bottom: 8px;
 }
 
 .amount {
+  @extend %font-medium;
   margin-bottom: 40px;
   color: var(--c-secondary);
   font-size: 14px;
@@ -27,5 +25,3 @@
 .pagination {
   margin-top: 40px;
 }
-
-/*# sourceMappingURL=Phones.module.css.map */

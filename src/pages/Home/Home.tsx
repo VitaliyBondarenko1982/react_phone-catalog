@@ -3,12 +3,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { getPhones } from '../../api';
 import { MainSlider, ProductsSlider, ShopByCategory } from '../../components';
 import { ProductCategories } from '../../constants';
-import { Phone } from '../../types';
+import { Product } from '../../types';
 
 import s from './Home.module.scss';
 
 const Home = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
+  const [phones, setPhones] = useState<Product[]>([]);
 
   useEffect(() => {
     getPhones(setPhones);

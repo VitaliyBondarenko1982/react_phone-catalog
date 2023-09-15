@@ -16,8 +16,8 @@ function useOnClickOutside({ refs, handler, isOpen }: Input): void {
       const { target } = event;
 
       if (
-        target instanceof Node
-        && refs.some(({ current }) => current && current.contains(target))
+        target instanceof Node &&
+        refs.some(({ current }) => current && current.contains(target))
       ) {
         return;
       }

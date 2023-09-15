@@ -1,6 +1,6 @@
 import { DropdownValue, ProductCategories } from './constants';
 
-export interface Phone {
+export interface Product {
   id: string;
   category: string;
   phoneId: string;
@@ -16,7 +16,7 @@ export interface Phone {
   image: string;
 }
 
-export interface PhoneDetails {
+export interface ProductDetails {
   id: string;
   namespaceId: string;
   name: string;

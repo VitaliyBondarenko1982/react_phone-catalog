@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { AppRoutes, Icons } from '../../constants';
-import { Phone } from '../../types';
+import { Product } from '../../types';
 import { noop, normalizeProductValue } from '../../utils';
 import { Button } from '../ui';
 
 import s from './PhoneCard.module.scss';
 
 interface Props {
-  phone: Phone;
+  phone: Product;
 }
 const PhoneCard: FC<Props> = ({ phone }) => {
-  const { phoneId, image, name, price, fullPrice, screen, capacity, ram }
-    = phone;
+  const { phoneId, image, name, price, fullPrice, screen, capacity, ram } =
+    phone;
 
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;
 
