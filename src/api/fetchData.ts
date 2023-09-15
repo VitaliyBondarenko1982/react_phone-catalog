@@ -3,7 +3,7 @@ import React, { SetStateAction } from 'react';
 import { IProduct, IProductDetails } from '../types';
 
 export const BASE_URL =
-  'https://vitaliybondarenko1982.github.io/react_phone-catalog/api/_new';
+  'https://mate-academy.github.io/react_phone-catalog/_new';
 
 const request = <T>(url: string): Promise<T> => {
   return fetch(BASE_URL + url).then((res) => {
