@@ -1,0 +1,45 @@
+.__app-Images-bigImageSlider {
+  --track-height: 442px;
+
+  & .slick-list {
+    padding: 12px;
+  }
+
+  & .slick-track {
+    height: var(--track-height);
+  }
+
+  & .slick-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+
+  .slick-dots {
+    display: flex !important;
+    flex-direction: column;
+    position: static;
+
+    & li {
+      margin: 0;
+      width: 80px;
+      height: 80px;
+      padding: 7px;
+      border: 1px solid var(--c-elements);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s ease;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &.slick-active,
+      &:hover {
+        border-color: var(--c-primary);
+      }
+    }
+  }
+}

@@ -131,6 +131,14 @@ export const PRODUCTS_SLIDER_SETTINGS = {
   ],
 };
 
+export const PRODUCT_DETAILS_IMAGES_SLIDER_SETTINGS = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  arrows: false,
+};
+
 export const MAIN_SLIDER_IMAGES = [
   'img/banner-1.png',
   'img/banner-2.png',

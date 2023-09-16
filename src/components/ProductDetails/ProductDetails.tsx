@@ -14,7 +14,7 @@ const ProductDetails: FC<Props> = ({ product }) => {
     <div className={s.container}>
       <Heading title={product.name} className={s.title} />
       <div className={s.row}>
-        <Images />
+        <Images images={product.images} />
         <Actions />
       </div>
       <Description />
