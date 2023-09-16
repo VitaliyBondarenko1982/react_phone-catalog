@@ -1,4 +1,7 @@
-.container {
-  display: flex;
-  gap: 76px;
+.about {
+  grid-column: 1 / 12;
+}
+
+.tech {
+  grid-column: 14 / 25;
 }

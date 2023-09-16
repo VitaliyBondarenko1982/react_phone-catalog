@@ -16,6 +16,11 @@ export interface IProduct {
   image: string;
 }
 
+export interface IProductDescription {
+  title: string;
+  text: string[];
+}
+
 export interface IProductDetails {
   id: string;
   namespaceId: string;
@@ -27,10 +32,7 @@ export interface IProductDetails {
   colorsAvailable: string[];
   color: string;
   images: string[];
-  description: {
-    title: string;
-    text: string[];
-  }[];
+  description: IProductDescription[];
   screen: string;
   resolution: string;
   processor: string;

@@ -3,8 +3,7 @@
   flex-direction: row-reverse;
   gap: 16px;
   align-items: center;
-  width: 0;
-  flex-grow: 1;
+  grid-column: 1 / 12;
 }
 
 .dots {
