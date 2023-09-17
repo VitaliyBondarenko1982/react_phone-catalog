@@ -1,2 +1,9 @@
 export declare const about: string;
+export declare const aboutItem: string;
+export declare const aboutItemText: string;
+export declare const aboutItemTitle: string;
 export declare const tech: string;
+export declare const techItem: string;
+export declare const techList: string;
+export declare const techTitle: string;
+export declare const title: string;

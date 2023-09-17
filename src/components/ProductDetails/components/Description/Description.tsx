@@ -28,29 +28,64 @@ const Description: FC<Props> = ({
   zoom,
   cell,
 }) => {
+  const techItems = [
+    {
+      title: 'Screen',
+      value: screen,
+    },
+    {
+      title: 'Resolution',
+      value: resolution,
+    },
+    {
+      title: 'Processor',
+      value: processor,
+    },
+    {
+      title: 'Ram',
+      value: ram,
+    },
+    {
+      title: 'Built in memory',
+      value: capacity,
+    },
+    {
+      title: 'Camera',
+      value: camera,
+    },
+    {
+      title: 'Zoom',
+      value: zoom,
+    },
+    {
+      title: 'Cell',
+      value: cell.join(', '),
+    },
+  ];
+
   return (
     <>
       <div className={s.about}>
-        <Heading title="About" tag="h2" />
-        {description.map(({ title, text }) => (
-          <div>
-            <Heading title={title} tag="h3" />
-            <p>{text}</p>
-          </div>
-        ))}
+        <Heading title="About" tag="h2" className={s.title} />
+        <ul>
+          {description.map(({ title, text }) => (
+            <li className={s.aboutItem}>
+              <Heading title={title} tag="h3" className={s.aboutItemTitle} />
+              <p className={s.aboutItemText}>{text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={s.tech}>
-        <Heading title="Tech specs" tag="h2" />
-        <div>
-          <div>{screen}</div>
-          <div>{resolution}</div>
-          <div>{processor}</div>
-          <div>{ram}</div>
-          <div>{capacity}</div>
-          <div>{camera}</div>
-          <div>{zoom}</div>
-          <div>{cell}</div>
-        </div>
+        <Heading title="Tech specs" tag="h2" className={s.title} />
+        <ul className={s.techList}>
+          {techItems.map(({ title, value }) => (
+            <li className={s.techItem}>
+              <span className={s.techTitle}>{title}</span>
+              <span>{value}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

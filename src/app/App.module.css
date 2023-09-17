@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'Mont';
-  src: url(./fonts/Montserrat-Regular.ttf) format('truetype');
+  font-family: "Mont";
+  src: url(./fonts/Montserrat-Regular.ttf) format("truetype");
   font-style: normal;
 }
 @font-face {
-  font-family: 'Mont Medium';
+  font-family: "Mont Medium";
   font-weight: 500;
-  src: url(./fonts/Montserrat-Medium.ttf) format('truetype');
+  src: url(./fonts/Montserrat-Medium.ttf) format("truetype");
   font-style: normal;
 }
 @font-face {
-  font-family: 'Mont SemiBold';
+  font-family: "Mont SemiBold";
   font-weight: 600;
-  src: url(./fonts/Montserrat-SemiBold.ttf) format('truetype');
+  src: url(./fonts/Montserrat-SemiBold.ttf) format("truetype");
   font-style: normal;
 }
 @font-face {
-  font-family: 'Mont Bold';
+  font-family: "Mont Bold";
   font-weight: 700;
-  src: url(./fonts/Montserrat-Bold.ttf) format('truetype');
+  src: url(./fonts/Montserrat-Bold.ttf) format("truetype");
   font-style: normal;
 }
 :root {
@@ -32,10 +32,10 @@
   --c-green: #27ae60;
   --c-red: #eb5757;
   --header-height: 64px;
-  --mont-regular: 'Mont', sans-serif;
-  --mont-medium: 'Mont Medium', sans-serif;
-  --mont-semibold: 'Mont SemiBold', sans-serif;
-  --mont-bold: 'Mont Bold', sans-serif;
+  --mont-regular: "Mont", sans-serif;
+  --mont-medium: "Mont Medium", sans-serif;
+  --mont-semibold: "Mont SemiBold", sans-serif;
+  --mont-bold: "Mont Bold", sans-serif;
 }
 
 * {
@@ -48,6 +48,7 @@ html {
 
 body {
   margin: 0;
+  color: var(--c-primary);
 }
 
 a,

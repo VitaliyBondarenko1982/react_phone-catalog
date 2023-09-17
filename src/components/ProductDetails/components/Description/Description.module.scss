@@ -1,7 +1,56 @@
+@import '../../../../styles/extends.scss';
+
+.title {
+  font-size: 22px;
+  line-height: 1.4;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--c-elements);
+}
+
 .about {
   grid-column: 1 / 12;
 }
 
+.aboutItem {
+  margin-top: 32px;
+}
+
+.aboutItemTitle {
+  @extend %font-semibold;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.aboutItemText {
+  @extend %font-medium;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--c-secondary);
+}
+
 .tech {
   grid-column: 14 / 25;
+}
+
+.techList {
+  margin-top: 32px;
+}
+
+.techItem {
+  @extend %font-medium;
+  font-size: 14px;
+  line-height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.techTitle {
+  color: var(--c-secondary);
 }
