@@ -28,6 +28,7 @@ const ProductDetails: FC<Props> = ({ product }) => {
     capacity,
     zoom,
     cell,
+    id,
   } = product;
 
   return (
@@ -41,9 +42,11 @@ const ProductDetails: FC<Props> = ({ product }) => {
           priceDiscount={priceDiscount}
           priceRegular={priceRegular}
           screen={screen}
+          capacity={capacity}
           resolution={resolution}
           processor={processor}
           ram={ram}
+          id={id}
         />
         <Description
           description={description}

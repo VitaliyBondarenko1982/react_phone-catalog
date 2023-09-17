@@ -202,3 +202,18 @@ export const PAGINATION_OPTIONS = [
     value: DropdownValue.PER_16,
   },
 ];
+
+export const AVAILABLE_COLORS: { [key: string]: string } = {
+  gold: '#fad8bd',
+  spacegray: '#4d4c4a',
+  midnightgreen: '#49534b',
+  silver: '#e9e9e1',
+  black: '#25262a',
+  rosegold: '#f1c8c2',
+  green: '#b7e4d0',
+  yellow: '#ffe98b',
+  white: '#fffaf7',
+  purple: '#d4d1dc',
+  red: '#cd273f',
+  coral: '#ff6451',
+};

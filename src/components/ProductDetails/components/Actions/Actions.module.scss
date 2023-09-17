@@ -1,3 +1,124 @@
+@import '../../../../styles/extends.scss';
+
 .container {
   grid-column: 14 / 25;
+}
+
+.wrapper {
+  width: 320px;
+}
+
+.label {
+  @extend %font-semibold;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--c-secondary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.colors {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--c-elements);
+  margin-bottom: 24px;
+}
+
+.capacity {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--c-elements);
+  margin-bottom: 32px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.colorsLink {
+  display: block;
+  border: 2px solid var(--c-white);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 0 1px var(--c-elements);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--c-primary);
+  }
+
+  &.activeLink {
+    box-shadow: 0 0 0 1px var(--c-primary);
+    cursor: default;
+  }
+}
+
+.capacityButton {
+  padding: 4px 8px;
+  line-height: 22px;
+
+  &.capacityButtonActive {
+    cursor: default;
+
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+}
+
+.price {
+  @extend %font-bold;
+  font-size: 32px;
+  line-height: 41px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.priceRegular {
+  @extend %font-medium;
+  color: var(--c-secondary);
+  text-decoration: line-through;
+  font-size: 22px;
+  line-height: 28px;
+  margin-left: 8px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.addToCard {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.addToFavorite {
+  padding: 11px;
+}
+
+.infoItem {
+  @extend %font-medium;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.infoTitle {
+  color: var(--c-secondary);
 }
