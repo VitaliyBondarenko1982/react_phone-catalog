@@ -1,8 +1,9 @@
-import { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { AppRoutes, Icons } from '../../constants';
+import { CartContext } from '../../contexts/CartContext';
 import { IProduct } from '../../types';
 import { getFullPath, noop, normalizeProductValue } from '../../utils';
 import { Button } from '../ui';
@@ -13,10 +14,20 @@ interface Props {
   phone: IProduct;
 }
 const PhoneCard: FC<Props> = ({ phone }) => {
-  const { phoneId, image, name, price, fullPrice, screen, capacity, ram } =
+  const { phoneId, image, name, price, fullPrice, screen, capacity, ram, id } =
     phone;
 
   const phoneDetailsPath = `${AppRoutes.PHONES}/${phoneId}`;
+
+  const { isItemInCart, addItem, removeItem } = useContext(CartContext);
+
+  const isProductInCard = isItemInCart(id);
+  const cartProduct = {
+    id,
+    name,
+    image,
+    price,
+  };
 
   return (
     <div
@@ -48,7 +59,12 @@ const PhoneCard: FC<Props> = ({ phone }) => {
         </li>
       </ul>
       <div className={s.buttons}>
-        <Button onClick={noop} className={s.addToCard} title="Add to cart" />
+        <Button
+          onClick={isProductInCard ? removeItem(id) : addItem(cartProduct)}
+          isSelected={isProductInCard}
+          className={s.addToCard}
+          title={isProductInCard ? 'Added to cart' : 'Add to cart'}
+        />
         <Button
           onClick={noop}
           type="secondary"

@@ -13,12 +13,14 @@ interface Props {
   title?: string | number;
   type?: 'primary' | 'secondary' | 'rounded' | 'transparent';
   isDisabled?: boolean;
+  isSelected?: boolean;
   className?: string;
 }
 const Button: FC<Props> = ({
   type = 'primary',
   onClick = noop,
   isDisabled = false,
+  isSelected = false,
   className,
   title,
   icon,
@@ -34,6 +36,7 @@ const Button: FC<Props> = ({
         [s.primary]: type === 'primary',
         [s.secondary]: type === 'secondary',
         [s.transparent]: type === 'transparent',
+        [s.selected]: isSelected,
       })}
     >
       {title}

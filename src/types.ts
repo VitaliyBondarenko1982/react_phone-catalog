@@ -21,6 +21,13 @@ export interface IProductDescription {
   text: string[];
 }
 
+export interface ICartProduct {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+}
+
 export interface IProductDetails {
   id: string;
   namespaceId: string;

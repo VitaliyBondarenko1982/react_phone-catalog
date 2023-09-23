@@ -1,38 +1,35 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { AVAILABLE_COLORS, Icons } from '../../../../constants';
+import { CartContext } from '../../../../contexts/CartContext';
+import { IProductDetails } from '../../../../types';
 import { getProductLink, noop } from '../../../../utils';
 import { Button } from '../../../ui';
 
 import s from './Actions.module.scss';
 
 interface Props {
-  capacityAvailable: string[];
-  colorsAvailable: string[];
-  priceRegular: number;
-  priceDiscount: number;
-  screen: string;
-  capacity: string;
-  resolution: string;
-  processor: string;
-  ram: string;
-  id: string;
+  product: IProductDetails;
 }
 
-const Actions: FC<Props> = ({
-  colorsAvailable,
-  capacityAvailable,
-  priceDiscount,
-  priceRegular,
-  screen,
-  resolution,
-  processor,
-  capacity,
-  ram,
-  id,
-}) => {
+const Actions: FC<Props> = ({ product }) => {
+  const {
+    name,
+    capacityAvailable,
+    colorsAvailable,
+    priceDiscount,
+    priceRegular,
+    screen,
+    resolution,
+    processor,
+    ram,
+    capacity,
+    id,
+    images,
+  } = product;
+
   const infoItems = [
     {
       title: 'Screen',
@@ -53,6 +50,15 @@ const Actions: FC<Props> = ({
   ];
 
   const activeColor = id.split('-').pop();
+  const { isItemInCart, addItem, removeItem } = useContext(CartContext);
+
+  const isProductInCard = isItemInCart(id);
+  const cartProduct = {
+    id,
+    name,
+    image: images[0] || '',
+    price: priceDiscount,
+  };
 
   return (
     <div className={s.container}>
@@ -105,7 +111,12 @@ const Actions: FC<Props> = ({
           <span className={s.priceRegular}>{`$${priceRegular}`}</span>
         </div>
         <div className={s.actions}>
-          <Button onClick={noop} className={s.addToCard} title="Add to cart" />
+          <Button
+            onClick={isProductInCard ? removeItem(id) : addItem(cartProduct)}
+            isSelected={isProductInCard}
+            className={s.addToCard}
+            title={isProductInCard ? 'Added to cart' : 'Add to cart'}
+          />
           <Button
             onClick={noop}
             type="secondary"

@@ -27,6 +27,12 @@
   color: var(--c-white);
   transition: box-shadow 0.3s ease;
 
+  &.selected {
+    background-color: var(--c-white);
+    color: var(--c-green);
+    border-color: var(--c-elements);
+  }
+
   &:hover {
     box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
   }

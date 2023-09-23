@@ -1,33 +1,27 @@
 import { FC } from 'react';
 
-import { IProductDescription } from '../../../../types';
+import { IProductDetails } from '../../../../types';
 import { Heading } from '../../../ui';
 
 import s from './Description.module.scss';
 
 interface Props {
-  description: IProductDescription[];
-  screen: string;
-  resolution: string;
-  processor: string;
-  ram: string;
-  camera: string;
-  capacity: string;
-  zoom: string;
-  cell: string[];
+  product: IProductDetails;
 }
 
-const Description: FC<Props> = ({
-  description,
-  screen,
-  resolution,
-  processor,
-  ram,
-  camera,
-  capacity,
-  zoom,
-  cell,
-}) => {
+const Description: FC<Props> = ({ product }) => {
+  const {
+    description,
+    screen,
+    resolution,
+    processor,
+    ram,
+    camera,
+    capacity,
+    zoom,
+    cell,
+  } = product;
+
   const techItems = [
     {
       title: 'Screen',

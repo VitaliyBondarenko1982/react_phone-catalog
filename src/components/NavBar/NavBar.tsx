@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 
 import {
+  AppRoutes,
   ENABLE_SEARCH_ROUTES,
   NAV_MAIN_LINKS,
   NAV_SIDE_LINKS,
 } from '../../constants';
+import { CartContext } from '../../contexts/CartContext';
 import { useCheckOnRoute } from '../../hooks';
 import Search from '../Search';
 import { Icon } from '../ui';
@@ -14,6 +17,7 @@ import s from './NavBar.module.scss';
 
 const NavBar = () => {
   const isSearchVisible = useCheckOnRoute(ENABLE_SEARCH_ROUTES);
+  const { totalCartCount } = useContext(CartContext);
 
   return (
     <nav className={s.container}>
@@ -46,7 +50,19 @@ const NavBar = () => {
                   });
                 }}
               >
-                <Icon iconId={icon} />
+                <div className={s.iconWrapper}>
+                  <Icon iconId={icon} />
+                  {to === AppRoutes.CART && totalCartCount && (
+                    <div
+                      className={cn(s.count, {
+                        [s.countMoreThenTen]: totalCartCount >= 10,
+                        [s.countMoreThenThousand]: totalCartCount >= 100,
+                      })}
+                    >
+                      {totalCartCount}
+                    </div>
+                  )}
+                </div>
               </NavLink>
             </li>
           ))}

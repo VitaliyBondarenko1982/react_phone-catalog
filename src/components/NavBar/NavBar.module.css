@@ -1,3 +1,8 @@
+.count {
+  font-family: var(--mont-semibold);
+  font-weight: 600;
+}
+
 .mainLink {
   font-family: var(--mont-bold);
   font-weight: 700;
@@ -28,6 +33,11 @@
   transition: color 0.3s ease;
 }
 
+.sideWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .sideList {
   display: flex;
   align-items: center;
@@ -43,12 +53,41 @@
   padding: 24px;
 }
 
+.iconWrapper {
+  position: relative;
+}
+
+.count {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  border-radius: 50%;
+  border: 1px solid var(--c-white);
+  background-color: var(--c-red);
+  width: 14px;
+  height: 14px;
+  color: var(--c-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  line-height: 10px;
+}
+.count.countMoreThenTen {
+  width: 16px;
+  height: 16px;
+}
+.count.countMoreThenThousand {
+  width: 18px;
+  height: 18px;
+}
+
 .isActive {
   color: var(--c-primary);
   position: relative;
 }
 .isActive:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 3px;

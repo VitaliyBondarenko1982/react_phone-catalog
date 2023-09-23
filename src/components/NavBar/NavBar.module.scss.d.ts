@@ -1,4 +1,8 @@
 export declare const container: string;
+export declare const count: string;
+export declare const countMoreThenTen: string;
+export declare const countMoreThenThousand: string;
+export declare const iconWrapper: string;
 export declare const isActive: string;
 export declare const mainItem: string;
 export declare const mainLink: string;

@@ -217,3 +217,8 @@ export const AVAILABLE_COLORS: { [key: string]: string } = {
   red: '#cd273f',
   coral: '#ff6451',
 };
+
+export enum LocalStorageKeys {
+  CART = `phone_catalog_cart`,
+  FAVORITES = `phone_catalog_favorites`,
+}

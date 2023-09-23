@@ -9,59 +9,15 @@ import s from './ProductDetails.module.scss';
 interface Props {
   product: IProductDetails;
 }
-const ProductDetails: FC<Props> = ({ product }) => {
-  // eslint-disable-next-line no-console
-  console.log(product);
-
-  const {
-    images,
-    description,
-    capacityAvailable,
-    colorsAvailable,
-    priceDiscount,
-    priceRegular,
-    screen,
-    resolution,
-    processor,
-    ram,
-    camera,
-    capacity,
-    zoom,
-    cell,
-    id,
-  } = product;
-
-  return (
-    <div className={s.container}>
-      <Heading title={product.name} className={s.title} />
-      <div className={s.grid}>
-        <Images images={images} />
-        <Actions
-          capacityAvailable={capacityAvailable}
-          colorsAvailable={colorsAvailable}
-          priceDiscount={priceDiscount}
-          priceRegular={priceRegular}
-          screen={screen}
-          capacity={capacity}
-          resolution={resolution}
-          processor={processor}
-          ram={ram}
-          id={id}
-        />
-        <Description
-          description={description}
-          screen={screen}
-          resolution={resolution}
-          processor={processor}
-          ram={ram}
-          camera={camera}
-          capacity={capacity}
-          zoom={zoom}
-          cell={cell}
-        />
-      </div>
+const ProductDetails: FC<Props> = ({ product }) => (
+  <div className={s.container}>
+    <Heading title={product.name} className={s.title} />
+    <div className={s.grid}>
+      <Images images={product.images} />
+      <Actions product={product} />
+      <Description product={product} />
     </div>
-  );
-};
+  </div>
+);
 
 export default ProductDetails;
