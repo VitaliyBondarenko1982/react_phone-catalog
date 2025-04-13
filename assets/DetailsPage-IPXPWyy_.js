@@ -1,0 +1,1 @@
+import{i as a,j as s,l as r}from"./index-BLuX8p7m.js";const i=()=>{const{disabledIds:t,setDisabledIds:e}=a();return s.jsx(s.Fragment,{children:s.jsx(r,{disabledIds:t,setDisabledIds:e})})};export{i as default};
